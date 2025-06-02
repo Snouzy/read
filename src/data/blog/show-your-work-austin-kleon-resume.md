@@ -1,5 +1,5 @@
 ---
-author: Votre Nom
+author: m6b9
 pubDatetime: 2025-02-26T10:00:00Z
 title: "Show Your Work! d'Austin Kleon : Partager pour mieux créer"
 slug: show-your-work-austin-kleon-resume
