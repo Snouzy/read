@@ -3,7 +3,7 @@ export const SITE = {
   author: "m6b9",
   profile: "https://read.snouzy.com/",
   desc: "Un blog de lecture.",
-  title: "read.snouzy.com",
+  title: "m6b9.read",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 10,
