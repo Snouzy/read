@@ -98,7 +98,7 @@ Une perspective intéressante qui inverse la causalité traditionnellement admis
 
 L'auteur décrypte nos rapports aux voitures, bijoux, et autres objets de consommation comme des prolongements de nos instincts primitifs de statut et de séduction.
 
-## Citations marquantes
+## Citations
 
 > Tu ne dois rien attendre des femmes, ni amour ni reconnaissance.
 
@@ -110,7 +110,7 @@ Ces formules percutantes résument l'esprit du livre : une lucidité sans conces
 
 ## L'approche scientifique
 
-Delavier s'appuie sur des concepts biologiques précis comme les **télomères**, les hormones, et les mécanismes de sélection naturelle pour étayer ses théories. Cette rigueur scientifique donne du poids à ses arguments, même les plus provocants.
+Delavier s'appuie sur des concepts biologiques précis comme les télomères (c'est une cellule et son noyau. Le noyau contient les chromosomes, au bout desquels il y a les télomères), les hormones, et les mécanismes de sélection naturelle pour étayer ses théories. Cette rigueur scientifique donne du poids à ses arguments, même les plus provocants.
 
 ## Réflexions personnelles
 
