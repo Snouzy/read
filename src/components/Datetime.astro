@@ -2,11 +2,15 @@
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+import "dayjs/locale/fr";
 import IconCalendar from "@/assets/icons/IconCalendar.svg";
 import { SITE } from "@/config";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
+dayjs.extend(localizedFormat);
+dayjs.locale("fr");
 
 export interface Props {
   class?: string;
@@ -21,16 +25,15 @@ const {
   modDatetime,
   size = "sm",
   class: className = "",
-  timezone: postTimezone,
 } = Astro.props;
 
 /* ========== Formatted Datetime ========== */
 const latestDatetime =
   modDatetime && modDatetime > pubDatetime ? modDatetime : pubDatetime;
-const datetime = dayjs(latestDatetime).tz(postTimezone || SITE.timezone);
+const datetime = dayjs(latestDatetime).tz(SITE.timezone);
 
-const date = datetime.format("D MMM, YYYY"); // e.g., '22 Mar, 2025'
-const time = datetime.format("hh:mm A"); // e.g., '08:30 PM'
+const date = datetime.format("D MMMM YYYY"); // e.g., '22 mars 2025'
+const time = datetime.format("HH:mm"); // e.g., '20:30'
 ---
 
 <div class:list={["flex items-end space-x-2 opacity-80", className]}>
@@ -43,10 +46,10 @@ const time = datetime.format("hh:mm A"); // e.g., '08:30 PM'
   {
     modDatetime && modDatetime > pubDatetime ? (
       <span class:list={["text-sm italic", { "sm:text-base": size === "lg" }]}>
-        Updated:
+        Mis à jour :
       </span>
     ) : (
-      <span class="sr-only">Published:</span>
+      <span class="sr-only">Publié :</span>
     )
   }
   <span class:list={["text-sm italic", { "sm:text-base": size === "lg" }]}>
