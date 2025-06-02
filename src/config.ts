@@ -14,9 +14,17 @@ export const SITE = {
   editPost: {
     enabled: true,
     text: "Suggérer des modifications",
-    url: "https://github.com/satnaing/astro-paper/edit/main/",
+    url: "https://github.com/Snouzy/read/edit/main/",
   },
   dynamicOgImage: true,
   lang: "fr", // html lang code. Set this empty and default will be "en"
   timezone: "Europe/Paris",
+} as const;
+
+// Configuration du livre en cours de lecture
+export const CURRENT_READING = {
+  enabled: true, // Pour pouvoir désactiver facilement
+  title: "Mohamed Boclet - Connaissance Illimitée",
+  currentPage: 60,
+  totalPages: 272,
 } as const;

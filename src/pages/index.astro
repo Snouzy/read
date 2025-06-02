@@ -10,8 +10,9 @@ import Hr from "@/components/Hr.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
-import { SITE } from "@/config";
+import { CURRENT_READING, SITE } from "@/config";
 import { SOCIALS } from "@/constants";
+import ReadingProgress from "@/components/ReadingProgress.astro";
 
 const posts = await getCollection("blog");
 
@@ -47,6 +48,16 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         et mes résumés de livres qui m'ont marqué. Un espace minimaliste, accessible et 
         optimisé pour une expérience de lecture agréable.
       </p>
+      <!-- Bannière de lecture en cours -->
+      {CURRENT_READING.enabled && (
+        <ReadingProgress 
+          title={CURRENT_READING.title}
+          currentPage={CURRENT_READING.currentPage}
+          totalPages={CURRENT_READING.totalPages}
+          className="mt-6"
+        />
+      )}
+      
       {
         // only display if at least one social link is enabled
         SOCIALS.length > 0 && (

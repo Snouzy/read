@@ -9,7 +9,7 @@ Bienvenue sur mon site. Ici **m6b9**.
 
 <!-- **Développeur fullstack**, créateur d'un SaaS, investisseur et  -->
 
-Fan de livres sur la discipline, les biographies et le développement personnel.
+Je lis sur la discipline, les biographies, le développement personnel, l'invesstissement.
 
 Ce site est mon espace personnel pour partager ce que j'apprends :  
 des **résumés de livres** sur le **développement personnel**, **l'entrepreneuriat**, la **tech**, et des **biographies inspirantes**.
