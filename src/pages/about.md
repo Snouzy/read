@@ -5,7 +5,11 @@ title: "À propos"
 
 Bienvenue sur mon site. Ici **m6b9**.
 
-m6b9 a été mon nom de code car je suis un ancien militaire du renseignement. Aujourd'hui **développeur fullstack**, créateur d'un SaaS, investisseur et fan de livres sur la discipline, les biographies et le développement personnel.
+<!-- m6b9 a été mon nom de code car je suis un ancien militaire du renseignement.  -->
+
+<!-- **Développeur fullstack**, créateur d'un SaaS, investisseur et  -->
+
+Fan de livres sur la discipline, les biographies et le développement personnel.
 
 Ce site est mon espace personnel pour partager ce que j'apprends :  
 des **résumés de livres** sur le **développement personnel**, **l'entrepreneuriat**, la **tech**, et des **biographies inspirantes**.
@@ -23,9 +27,8 @@ Il est également hébergé via **Vercel**.
 
 ## Ce que tu trouveras ici
 
-- des **résumés clairs et utiles**
-- une approche orientée **action & exécution**
-- un contenu à la croisée du **code, du cerveau et du business**
+- des résumés
+- un contenu à la croisée du code, du cerveau et du business
 - une plateforme légère, rapide et agréable à lire
 - Mes pensées, qui n'engagent que moi
 

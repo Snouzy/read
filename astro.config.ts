@@ -15,8 +15,22 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [
-      remarkToc,
-      [remarkCollapse, { test: "Table des matières" }],
+      [
+        remarkToc,
+        {
+          heading:
+            "(table[ -]of[ -]contents?)|(table[ -]des[ -]mati[eè]res?)|(sommaire)",
+          maxDepth: 3,
+        },
+      ],
+      [remarkCollapse, { test: "Table of contents" }],
+      [
+        remarkCollapse,
+        {
+          test: "Table des matières",
+          summary: `Voir la table des matières`,
+        },
+      ],
     ],
     shikiConfig: {
       // For more themes, visit https://shiki.style/themes

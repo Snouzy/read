@@ -8,7 +8,12 @@ import IconTelegram from "@/assets/icons/IconTelegram.svg";
 import IconPinterest from "@/assets/icons/IconPinterest.svg";
 // import { SITE } from "@/config";
 
-export const SOCIALS = [
+export const SOCIALS: {
+  name: string;
+  href: string;
+  linkTitle: string;
+  icon: typeof IconMail;
+}[] = [
   // {
   //   name: "Github",
   //   href: "https://github.com/satnaing/astro-paper",

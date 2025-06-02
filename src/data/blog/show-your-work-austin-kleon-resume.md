@@ -3,7 +3,7 @@ author: Votre Nom
 pubDatetime: 2025-02-26T10:00:00Z
 title: "Show Your Work! d'Austin Kleon : Partager pour mieux créer"
 slug: show-your-work-austin-kleon-resume
-featured: false
+featured: true
 draft: false
 tags:
   - lecture
@@ -16,7 +16,7 @@ description: Mes réflexions sur "Show Your Work!" d'Austin Kleon, un guide pour
 
 J'ai récemment terminé "Show Your Work!" d'Austin Kleon, et je dois avouer que mes sentiments sont mitigés. Bien que le livre soit globalement **"bien"**, j'ai eu l'impression qu'il était **assez vide** par moments. Malgré cela, il contient quelques pépites qui méritent d'être partagées.
 
-## Table of contents
+## Sommaire
 
 ## Mes impressions générales
 
