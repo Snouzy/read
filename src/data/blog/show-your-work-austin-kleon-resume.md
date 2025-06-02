@@ -1,0 +1,69 @@
+---
+author: Votre Nom
+pubDatetime: 2025-02-26T10:00:00Z
+title: "Show Your Work! d'Austin Kleon : Partager pour mieux créer"
+slug: show-your-work-austin-kleon-resume
+featured: false
+draft: false
+tags:
+  - lecture
+  - créativité
+  - partage
+  - développement-personnel
+  - résumé-livre
+description: Mes réflexions sur "Show Your Work!" d'Austin Kleon, un guide pour partager son travail créatif et construire une audience authentique.
+---
+
+J'ai récemment terminé "Show Your Work!" d'Austin Kleon, et je dois avouer que mes sentiments sont mitigés. Bien que le livre soit globalement **"bien"**, j'ai eu l'impression qu'il était **assez vide** par moments. Malgré cela, il contient quelques pépites qui méritent d'être partagées.
+
+## Table of contents
+
+## Mes impressions générales
+
+Note personnelle : **5/5** (malgré mes réserves)
+
+Pourquoi cette note élevée malgré mon sentiment de "vide" ? Parce que Kleon réussit à synthétiser des idées importantes sur le partage créatif de manière accessible. Le livre se lit rapidement et contient des conseils pratiques, même s'ils auraient pu être développés davantage.
+
+## Les concepts clés du livre
+
+### L'honnêteté comme fondement
+
+**Être honnête et ouvert sur ce qu'on aime est la meilleure façon de connecter avec les gens qui ont la même façon de penser.**
+
+C'est probablement l'enseignement le plus puissant du livre. Kleon insiste sur l'authenticité comme moteur de connexion. Plutôt que d'essayer de plaire à tout le monde, il vaut mieux assumer ses goûts et attirer naturellement les personnes qui partagent nos centres d'intérêt.
+
+### La curiosité comme moteur
+
+La curiosité n'est pas seulement un trait de personnalité, c'est un outil de création. Kleon encourage à cultiver et partager sa curiosité, car c'est ce qui nous rend uniques dans notre approche créative.
+
+### Le partage intelligent
+
+Le partage ne signifie pas tout dévoiler. Il s'agit de trouver le bon équilibre entre transparence et mystère, entre processus et résultat final. Montrer son travail, c'est inviter les autres dans son univers créatif sans pour autant perdre sa magie.
+
+### L'importance de la perception
+
+Comment nous percevons le monde influence directement notre création. Kleon nous rappelle que notre angle unique de vision est notre plus grande force créative.
+
+### Le storytelling au service de la création
+
+Chaque projet, chaque œuvre a une histoire. Apprendre à raconter cette histoire transforme un simple partage en véritable connexion avec son audience.
+
+## Les références inspirantes
+
+Kleon fait appel à des figures emblématiques comme **Pablo Picasso** et **Constantin Brancusi** pour illustrer ses propos. Ces références donnent du poids à ses arguments et montrent que les principes qu'il défend ne sont pas nouveaux, mais éternels.
+
+## L'apprentissage permanent
+
+L'un des messages sous-jacents du livre est que l'apprentissage ne s'arrête jamais. Partager son travail fait partie intégrante de ce processus d'apprentissage continu.
+
+## Construire une communauté
+
+Au-delà du simple partage, Kleon nous encourage à construire une véritable communauté autour de notre travail. C'est peut-être là que le livre trouve sa plus grande valeur : il nous rappelle que créer n'est pas un acte solitaire.
+
+## Verdict final
+
+"Show Your Work!" est un livre qui se lit facilement et qui contient des conseils pratiques pour quiconque souhaite partager son travail créatif. Bien qu'il puisse parfois sembler superficiel, il pose les bonnes questions et offre un cadre de réflexion solide.
+
+Si vous cherchez un guide détaillé et approfondi, vous risquez d'être déçu. En revanche, si vous voulez un déclic, une motivation pour commencer à partager votre travail, ce livre remplit parfaitement son rôle.
+
+**Recommandation** : À lire si vous hésitez encore à partager votre travail créatif, mais ne vous attendez pas à une révolution conceptuelle.

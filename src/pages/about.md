@@ -1,36 +1,36 @@
 ---
 layout: ../layouts/AboutLayout.astro
-title: "About"
+title: "À propos"
 ---
 
-AstroPaper is a minimal, responsive and SEO-friendly Astro blog theme. I designed and crafted this based on [my personal blog](https://satnaing.dev/blog).
+Bienvenue sur mon site. Ici **m6b9**.
 
-This theme is aimed to be accessible out of the box. Light and dark mode are supported by
-default and additional color schemes can also be configured.
+m6b9 a été mon nom de code car je suis un ancien militaire du renseignement. Aujourd'hui **développeur fullstack**, créateur d'un SaaS, investisseur et fan de livres sur la discipline, les biographies et le développement personnel.
 
-This theme is self-documented \_ which means articles/posts in this theme can also be considered as documentations. So, see the documentation for more info.
+Ce site est mon espace personnel pour partager ce que j'apprends :  
+des **résumés de livres** sur le **développement personnel**, **l'entrepreneuriat**, la **tech**, et des **biographies inspirantes**.
+
+J'ai testé Notion, Obsidian, Notes... je n'étais satisfait d'aucun d'entre-eux. Finalement, je passe ma journée devant un IDE et c'est donc naturellement que j'ai voulu un nouvel endroit pour hoster mes lectures, résumés, et pensées.
 
 <div>
-  <img src="/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
+  <img src="/dev.svg" class="sm:w-1/2 mx-auto" alt="illustration développeur et mindset">
 </div>
 
-## Tech Stack
+## Stack technique
 
-This theme is written in vanilla JavaScript (+ TypeScript for type checking) and a little bit of ReactJS for some interactions. TailwindCSS is used for styling; and Markdown is used for blog contents.
+Ce site utilise [Astro](https://astro.build) pour des performances optimales, du **Markdown** pour les contenus, et **Tailwind CSS** pour un design épuré.  
+Il est également hébergé via **Vercel**.
 
-## Features
+## Ce que tu trouveras ici
 
-Here are certain features of this site.
+- des **résumés clairs et utiles**
+- une approche orientée **action & exécution**
+- un contenu à la croisée du **code, du cerveau et du business**
+- une plateforme légère, rapide et agréable à lire
+- Mes pensées, qui n'engagent que moi
 
-- fully responsive and accessible
-- SEO-friendly
-- light & dark mode
-- fuzzy search
-- super fast performance
-- draft posts
-- pagination
-- sitemap & rss feed
-- highly customizable
+Ce projet évoluera au fil de mes lectures et de mes idées.
 
-If you like this theme, you can star/contribute to the [repo](https://github.com/satnaing/astro-paper).  
-Or you can even give any feedback via my [email](mailto:contact@satnaing.dev).
+---
+
+"Tu veux progresser plus vite que 95% des gens ? Commence par lire ce qui compte". Moi-même.
