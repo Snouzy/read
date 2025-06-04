@@ -16,6 +16,7 @@ tags:
 ---
 
 import { ROICalculator, HormoziTimeline, ConversionStats, CommunicationMatrix, LeadMagnetFunnel } from "../../components/HormoziComponents.tsx";
+import { RoughNotation } from "react-rough-notation";
 
 J'ai récemment terminé "100$ Leads" d'Alex Hormozi, et je dois dire que ce livre m'a **impressionné par sa simplicité et son efficacité**. Hormozi a ce talent rare de rendre les concepts complexes du marketing accessibles, comme s'il **"écrivait pour des enfants"** - et il le dit lui-même dans le livre.
 
@@ -33,39 +34,39 @@ Ce livre mérite cette note maximale pour une raison simple : **il fonctionne**.
 
 **Comment il s'est lancé : Il a 150K de remboursement d'une salle de sport qu'il a lancé.**
 
-L'histoire personnelle d'Hormozi est fascinante. Endetté à hauteur de 150K€ après l'échec de sa première salle de sport, il crée **Gym Launch** avec une offre irrésistible : remplir une salle à sa pleine capacité en 30 jours gratuitement, en ne gardant que les frais d'adhésion des six premières semaines.
+L'histoire personnelle d'Hormozi est fascinante. Endetté à hauteur de 150K€ après l'échec de sa première salle de sport, il crée **<RoughNotation client:visible type="underline" color="#74b9ff" show={true}>Gym Launch</RoughNotation>** avec une offre irrésistible : remplir une salle à sa pleine capacité en 30 jours gratuitement, en ne gardant que les frais d'adhésion des six premières semaines.
 
 **Résultats :** 1ère année : 6M€ de CA, 2ème année : 17M€ de bénéfice pour 26M€ de CA, avec 4500 salles clientes.
 
-<HormoziTimeline />
+<HormoziTimeline client:visible />
 
 ## Les concepts fondamentaux
 
 ### Qu'est-ce qu'un lead ?
 
-**Quelqu'un qui cherche un problème à résoudre et qui a de l'argent à dépenser.**
+**<RoughNotation client:visible type="bracket" color="#00cec9" show={true}  brackets={["left", "right"]}>Quelqu'un qui cherche un problème à résoudre et qui a de l'argent à dépenser.</RoughNotation>**
 
-Cette définition simple mais puissante recentre tout. Un lead n'est pas juste un contact, c'est une personne avec un besoin ET les moyens de le résoudre. Hormozi distingue aussi le **lead engagé** : celui qui montre de l'intérêt en donnant ses infos, en nous suivant, ou en répondant aux campagnes.
+Cette définition simple mais puissante recentre tout. Un lead n'est pas juste un contact, c'est une personne avec un besoin ET les moyens de le résoudre. Hormozi distingue aussi le **<RoughNotation client:visible type="circle" color="#a29bfe" show={true} >lead engagé</RoughNotation>** : celui qui montre de l'intérêt en donnant ses infos, en nous suivant, ou en répondant aux campagnes.
 
 <ROICalculator client:visible />
 
 ### Les lead magnets
 
-**"Une personne qui paie avec son temps aujourd'hui, est plus susceptible de payer avec son argent plus tard"**
+**"<RoughNotation client:visible type="highlight" color="#fdcb6e" show={true}>Une personne qui paie avec son temps aujourd'hui, est plus susceptible de payer avec son argent plus tard</RoughNotation>"**
 
 Hormozi identifie 3 types de lead magnets :
 
-1. **Révélation** : Met en lumière leur problème (ex: montrer que leur site charge 30% en dessous de la vitesse prévue)
-2. **Échantillon** : Offrir un accès complet mais bref à l'offre principale
-3. **Étape d'un processus** : Donner une étape d'un processus plus large
+1. **<RoughNotation client:visible type="underline" color="#e17055" show={true}>Révélation</RoughNotation>** : Met en lumière leur problème (ex: montrer que leur site charge 30% en dessous de la vitesse prévue)
+2. **<RoughNotation client:visible type="underline" color="#00b894" show={true}>Échantillon</RoughNotation>** : Offrir un accès complet mais bref à l'offre principale
+3. **<RoughNotation client:visible type="underline" color="#6c5ce7" show={true} >Étape d'un processus</RoughNotation>** : Donner une étape d'un processus plus large
 
-**Son conseil :** Être un **"dealer de drogue"** - pouvoir offrir une dose, et idéalement, la plus forte.
+**Son conseil :** Être un **<RoughNotation client:visible type="highlight" color="#fd79a8" show={true} >"dealer de drogue"</RoughNotation>** - pouvoir offrir une dose, et idéalement, la plus forte.
 
-<LeadMagnetFunnel />
+<LeadMagnetFunnel client:visible />
 
 ### Le modèle Dean Jackson
 
-**"Recherches-tu toujours (4 mots désir)"**
+**"<RoughNotation client:visible type="box" color="#55a3ff" show={true} >Recherches-tu toujours (4 mots désir)</RoughNotation>"**
 
 Un modèle simple mais efficace pour inciter les prospects à s'engager :
 
@@ -79,7 +80,7 @@ Pas d'images, pas de fioritures, pas de liens - juste une question directe qui t
 
 ### La règle d'or de la valeur
 
-**"En ligne, tu ne peux jamais fournir TROP de valeur. Par contre, tu peux être sanctionné pour trop peu."**
+**"<RoughNotation client:visible type="highlight" color="#96ceb4" show={true}>En ligne, tu ne peux jamais fournir TROP de valeur. Par contre, tu peux être sanctionné pour trop peu.</RoughNotation>"**
 
 L'objectif est de fournir plus de valeur que le coût de l'offre principale. Cela passe par :
 
@@ -92,22 +93,22 @@ L'objectif est de fournir plus de valeur que le coût de l'offre principale. Cel
 
 **Goal d'une vidéo :**
 
-- **Accrocher** : les inciter à marquer le contenu
-- **Retenir** : les inciter à le consommer
-- **Récompenser** : satisfaire la raison pour laquelle ils l'ont consommé
+- **<RoughNotation client:visible type="underline" color="#ff7675" show={true}>Accrocher</RoughNotation>** : les inciter à marquer le contenu
+- **<RoughNotation client:visible type="underline" color="#74b9ff" show={true} >Retenir</RoughNotation>** : les inciter à le consommer
+- **<RoughNotation client:visible type="underline" color="#00b894" show={true}>Récompenser</RoughNotation>** : satisfaire la raison pour laquelle ils l'ont consommé
 
 Hormozi divise les sujets en 5 catégories : loin dans le passé, passé récent, présent, tendance, fabriqué.
 
-**Astuce clé :** Passer de "Comment faire" à "Comment je fais" - montrer son expérience directe plutôt que donner des leçons.
+**Astuce clé :** Passer de <RoughNotation client:visible type="crossed-off" color="#d63031" show={true}>"Comment faire"</RoughNotation> à **<RoughNotation client:visible type="circle" color="#00b894" show={true}>"Comment je fais"</RoughNotation>** - montrer son expérience directe plutôt que donner des leçons.
 
 ## L'audience et la communication
 
 ### Les deux types d'audience
 
-- **Chaude** : Personnes qui nous ont donné la permission de les contacter
-- **Froide** : Inconnus qui ne nous ont pas donné cette permission
+- **<RoughNotation client:visible type="highlight" color="#ffeaa7" show={true}>Chaude</RoughNotation>** : Personnes qui nous ont donné la permission de les contacter
+- **<RoughNotation client:visible type="highlight" color="#81ecec" show={true}>Froide</RoughNotation>** : Inconnus qui ne nous ont pas donné cette permission
 
-**Chaque audience = message différent**
+**<RoughNotation client:visible type="bracket" color="#fd79a8" show={true} brackets={["left", "right"]}>Chaque audience = message différent</RoughNotation>**
 
 ### Les 4 types de communication
 
@@ -116,36 +117,36 @@ Hormozi divise les sujets en 5 catégories : loin dans le passé, passé récent
 3. **Un à un avec audience froide** = Prospection froide
 4. **Un à plusieurs avec audience froide** = Publicité payante
 
-<CommunicationMatrix />
+<CommunicationMatrix client:visible />
 
 **Résultats attendus en prospection chaleureuse :**
 
 - 20 réponses sur 100 contacts
 - 4 personnes accepteront l'offre gratuite sur ces 20
 - 1 personne convertira vers l'offre payante sur ces 4
-- **= 1% de conversion finale**
+- **= <RoughNotation client:visible type="circle" color="#e17055" show={true} >1% de conversion finale</RoughNotation>**
 
-<ConversionStats />
+<ConversionStats client:visible />
 
 ## Le Call-To-Action (CTA)
 
 ### La formule magique
 
-**Les bons CTA ont 2 éléments : Quoi faire et la raison de le faire maintenant.**
+**<RoughNotation client:visible type="highlight" color="#a29bfe" show={true}>Les bons CTA ont 2 éléments : Quoi faire et la raison de le faire maintenant.</RoughNotation>**
 
 Les meilleures raisons :
 
-- **Rareté** : "Les créneaux les plus pratiques se remplissent rapidement"
-- **Urgence** : "Notre promo se termine lundi à minuit"
+- **<RoughNotation client:visible type="underline" color="#e84393" show={true} >Rareté</RoughNotation>** : "Les créneaux les plus pratiques se remplissent rapidement"
+- **<RoughNotation client:visible type="underline" color="#fd79a8" show={true}>Urgence</RoughNotation>** : "Notre promo se termine lundi à minuit"
 - **Raison apparemment illogique** : Comme le planificateur de fêtes qui trouve n'importe quelle excuse
 
-**Principe clé :** "Un esprit confus n'achète pas" - ne pas demander plusieurs actions en même temps.
+**Principe clé :** "<RoughNotation client:visible type="highlight" color="#fdcb6e" show={true} >Un esprit confus n'achète pas</RoughNotation>" - ne pas demander plusieurs actions en même temps.
 
 ## L'art de l'offre
 
 ### Le framework de présentation
 
-**3/4 échanges en digital ou 3/4 minutes en réel avant de présenter son offre.**
+**<RoughNotation client:visible type="box" color="#00cec9" show={true}>3/4 échanges en digital ou 3/4 minutes en réel avant de présenter son offre.</RoughNotation>**
 
 Structure à suivre :
 
@@ -154,31 +155,31 @@ Structure à suivre :
 3. **Délai** : Combien de temps faudra-t-il après leur achat
 4. **Effort et sacrifice** : Ce qu'ils doivent changer pour parvenir au résultat
 
-**Objectif = maximiser les 2 premiers et minimiser les 2 derniers**
+**<RoughNotation client:visible type="highlight" color="#55a3ff" show={true}>Objectif = maximiser les 2 premiers et minimiser les 2 derniers</RoughNotation>**
 
 ### Le système d'affiliation
 
 **"S'imaginer qu'on a perdu tous nos clients et qu'il nous en reste un seul. On doit faire en sorte que tous les clients viennent de ce seul client"**
 
-Exemple Dropbox : +16GB d'espace gratuit pour chaque ami recommandé = x39 de croissance.
+Exemple <RoughNotation client:visible type="circle" color="#00b894" show={true} >Dropbox</RoughNotation> : +16GB d'espace gratuit pour chaque ami recommandé = x39 de croissance.
 
-**Ne pas demander SI ils connaissent quelqu'un mais QUI.**
+**<RoughNotation client:visible type="underline" color="#e17055" show={true}>Ne pas demander SI ils connaissent quelqu'un mais QUI.</RoughNotation>**
 
 ## Le ratio donner/demander
 
 ### La règle de Gary Vaynerchuk revisitée
 
-**"Donne, donne, donne, donne jusqu'à ce qu'ils demandent"**
+**"<RoughNotation client:visible type="highlight" color="#74b9ff" show={true}>Donne, donne, donne, donne jusqu'à ce qu'ils demandent</RoughNotation>"**
 
-Ratio recommandé : 4 publications de valeur pour 1 de vente (inspiré du ratio TV de 13 minutes de pub pour 60 minutes de contenu).
+Ratio recommandé : <RoughNotation client:visible type="circle" color="#fd79a8" show={true}>4 publications de valeur pour 1 de vente</RoughNotation> (inspiré du ratio TV de 13 minutes de pub pour 60 minutes de contenu).
 
-**Conseil de pro :** Donne en public, demande en privé.
+**Conseil de pro :** <RoughNotation client:visible type="highlight" color="#00cec9" show={true} >Donne en public, demande en privé</RoughNotation>.
 
 ## Les employés et le scaling
 
 ### La vision d'Hormozi
 
-**Voir les employés comme un échange de 40 heures d'actions contre 4 heures de gestion.**
+**<RoughNotation client:visible type="bracket" color="#6c5ce7" show={true} brackets={["left", "right"]}>Voir les employés comme un échange de 40 heures d'actions contre 4 heures de gestion.</RoughNotation>**
 
 Avantages :
 
@@ -187,25 +188,25 @@ Avantages :
 
 ### La méthode 3D de formation
 
-1. **Documentation** : S'enregistrer en train de faire la tâche
-2. **Démonstration** : Le faire devant eux
-3. **Duplication** : Ils le font devant nous
+1. **<RoughNotation client:visible type="underline" color="#e17055" show={true} >Documentation</RoughNotation>** : S'enregistrer en train de faire la tâche
+2. **<RoughNotation client:visible type="underline" color="#fdcb6e" show={true}>Démonstration</RoughNotation>** : Le faire devant eux
+3. **<RoughNotation client:visible type="underline" color="#00b894" show={true}>Duplication</RoughNotation>** : Ils le font devant nous
 
 ## Citations marquantes
 
-> Difficile d'être pauvre quand les prospects frappent à ta porte
+> <RoughNotation client:visible type="highlight" color="#fd79a8" show={true}>Difficile d'être pauvre quand les prospects frappent à ta porte</RoughNotation>
 
 > L'échec est une condition préalable au succès
 
-> Les oui me donnent des opportunités. Les non me donnent des retours d'informations. De toute façon, je gagne
+> <RoughNotation client:visible type="highlight" color="#74b9ff" show={true}>Les oui me donnent des opportunités. Les non me donnent des retours d'informations. De toute façon, je gagne</RoughNotation>
 
 > Tu peux devenir "assez bon" dans presque tout en 20 heures d'effort concentré
 
-> Tu t'enrichis avec ce que tu crées. Tu deviens riche avec ce que tu possèdes
+> <RoughNotation client:visible type="highlight" color="#00cec9" show={true}>Tu t'enrichis avec ce que tu crées. Tu deviens riche avec ce que tu possèdes</RoughNotation>
 
 ## L'anecdote Warren Buffett
 
-**Avant de devenir le plus grand investisseur, Warren Buffett a proposé de travailler gratuitement pour son héros Ben Graham. Celui-ci a répondu qu'il était "trop cher".**
+**Avant de devenir le plus grand investisseur, <RoughNotation client:visible type="circle" color="#55a3ff" show={true}>Warren Buffett</RoughNotation> a proposé de travailler gratuitement pour son héros Ben Graham. Celui-ci a répondu qu'il était <RoughNotation client:visible type="highlight" color="#ffeaa7" show={true}>"trop cher"</RoughNotation>.**
 
 Cette anecdote illustre parfaitement que les premiers clients nous forment gratuitement - ils nous coûtent du temps pour être formés, comme Buffett l'aurait coûté à Graham.
 
@@ -213,16 +214,16 @@ Cette anecdote illustre parfaitement que les premiers clients nous forment gratu
 
 Ce livre est un **condensé d'expérience pratique**. Hormozi ne nous vend pas de rêves, il partage des systèmes éprouvés. Sa capacité à simplifier des concepts complexes en méthodes actionnables est remarquable.
 
-L'approche "dealer de drogue" du lead magnet peut sembler provocante, mais elle révèle une vérité : **il faut donner tellement de valeur que les gens deviennent accros à notre contenu**.
+L'approche "dealer de drogue" du lead magnet peut sembler provocante, mais elle révèle une vérité : **il faut donner tellement de valeur que les gens deviennent accros à notre contenud**.
 
-Le livre montre aussi l'importance de la **constance** : 100 contacts personnalisés par jour, 4 heures de prospection minimum, toujours recommencer par le premier quand on a fini la liste.
+Le livre montre aussi l'importance de la **<RoughNotation client:visible type="underline" color="#00b894" show={true}>constance</RoughNotation>** : 100 contacts personnalisés par jour, 4 heures de prospection minimum, toujours recommencer par le premier quand on a fini la liste.
 
 ## Verdict final
 
-"100$ Leads" est un livre **indispensable** pour quiconque veut comprendre la génération de prospects. Hormozi démystifie le marketing en le ramenant à l'essentiel : **créer de la valeur et la communiquer efficacement**.
+"100$ Leads" est un livre **indispensable** pour quiconque veut comprendre la génération de prospects. Hormozi démystifie le marketing en le ramenant à l'essentiel : **<RoughNotation client:visible type="highlight" color="#74b9ff" show={true}>créer de la valeur et la communiquer efficacement</RoughNotation>**.
 
 Ce livre s'adresse autant aux débutants qu'aux entrepreneurs confirmés qui veulent systématiser leur acquisition client.
 
 **Recommandation** : À lire absolument si vous voulez arrêter de chercher des clients et commencer à les attirer. Attention : préparez-vous à passer à l'action immédiatement après la lecture.
 
-**Bonus** : Le livre lui-même est un lead magnet pour l'offre principale d'Hormozi : investir dans votre entreprise quand elle atteint 1M€ de revenus récurrents. Malin ! 
+**Bonus** :Le livre lui-même est un lead magnet pour l'offre principale d'Hormozi : investir dans votre entreprise quand elle atteint 1M€ de revenus récurrents. Malin ! 

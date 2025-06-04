@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import type { ChangeEvent } from "react";
+import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
+
+const OFFER = 400;
 
 // 1. Calculateur de ROI de prospection
 export const ROICalculator = () => {
@@ -7,7 +10,7 @@ export const ROICalculator = () => {
 
   const monthlyContacts = contactsPerDay * 22; // jours ouvrables
   const monthlyClients = Math.round(monthlyContacts * 0.01);
-  const monthlyRevenue = monthlyClients * 400; // prix moyen offre
+  const monthlyRevenue = monthlyClients * OFFER; // prix moyen offre
   const yearlyRevenue = monthlyRevenue * 12;
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -17,7 +20,15 @@ export const ROICalculator = () => {
   return (
     <div className="my-6 rounded-lg border-2 border-border bg-gradient-to-r from-background to-muted/20 p-6">
       <h3 className="mb-4 text-xl font-bold text-foreground">
-        📊 Calculateur ROI Prospection
+        📊{" "}
+        <RoughNotation
+          type="highlight"
+          show={true}
+          color="#ff6b6b"
+          animationDelay={500}
+        >
+          Calculateur ROI Prospection
+        </RoughNotation>
       </h3>
       <div className="mb-4">
         <label className="mb-2 block text-sm font-medium text-foreground/80">
@@ -45,16 +56,32 @@ export const ROICalculator = () => {
         </div>
         <div className="rounded-lg border border-border bg-background p-4 text-center shadow-sm">
           <div className="text-lg font-semibold text-foreground/70">
-            Revenus/an
+            Revenus/an (offre ou LTV à {OFFER}€)
           </div>
           <div className="text-3xl font-bold text-accent">
-            {yearlyRevenue.toLocaleString()}€
+            <RoughNotation
+              type="box"
+              show={true}
+              color="#96ceb4"
+              animationDelay={1700}
+            >
+              {yearlyRevenue.toLocaleString()}€
+            </RoughNotation>
           </div>
         </div>
       </div>
 
       <div className="mt-4 text-center text-sm text-foreground/60">
-        *Basé sur 1% de conversion finale (méthode Hormozi)
+        *Basé sur{" "}
+        <RoughNotation
+          type="underline"
+          show={true}
+          color="#feca57"
+          animationDelay={2000}
+        >
+          1% de conversion finale
+        </RoughNotation>{" "}
+        (méthode Hormozi)
       </div>
     </div>
   );
@@ -82,49 +109,66 @@ export const HormoziTimeline = () => {
   return (
     <div className="my-6 rounded-lg border border-border bg-background p-6">
       <h3 className="mb-6 text-center text-xl font-bold text-foreground">
-        🚀 L'ascension d'Alex Hormozi
+        🚀{" "}
+        <RoughNotation
+          type="highlight"
+          show={true}
+          color="#ff9ff3"
+          animationDelay={300}
+        >
+          L'ascension d'Alex Hormozi
+        </RoughNotation>
       </h3>
       <div className="relative">
         <div className="absolute left-1/2 h-full w-1 -translate-x-1/2 transform bg-border"></div>
-        {milestones.map((milestone, index) => (
-          <div
-            key={index}
-            className={`mb-8 flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
-          >
+        <RoughNotationGroup show={true}>
+          {milestones.map((milestone, index) => (
             <div
-              className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}
+              key={index}
+              className={`mb-8 flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
             >
               <div
-                className={`rounded-lg border-2 p-4 ${
-                  milestone.isNegative
-                    ? "border-red-300 bg-red-50 dark:border-red-800 dark:bg-red-950/30"
-                    : "border-border bg-muted/20"
-                }`}
+                className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}
               >
-                <div className="text-lg font-bold text-foreground">
-                  {milestone.year}
-                </div>
                 <div
-                  className={`text-2xl font-bold ${
+                  className={`rounded-lg border-2 p-4 ${
                     milestone.isNegative
-                      ? "text-red-600 dark:text-red-400"
-                      : "text-accent"
+                      ? "border-red-300 bg-red-50 dark:border-red-800 dark:bg-red-950/30"
+                      : "border-border bg-muted/20"
                   }`}
                 >
-                  {milestone.amount}
-                </div>
-                <div className="text-sm text-foreground/70">
-                  {milestone.label}
+                  <div className="text-lg font-bold text-foreground">
+                    {milestone.year}
+                  </div>
+                  <div
+                    className={`text-2xl font-bold ${
+                      milestone.isNegative
+                        ? "text-red-600 dark:text-red-400"
+                        : "text-accent"
+                    }`}
+                  >
+                    <RoughNotation
+                      type={milestone.isNegative ? "crossed-off" : "circle"}
+                      show={true}
+                      color={milestone.isNegative ? "#e74c3c" : "#2ecc71"}
+                      animationDelay={500 + index * 300}
+                    >
+                      {milestone.amount}
+                    </RoughNotation>
+                  </div>
+                  <div className="text-sm text-foreground/70">
+                    {milestone.label}
+                  </div>
                 </div>
               </div>
+              <div
+                className={`absolute left-1/2 h-4 w-4 -translate-x-1/2 transform rounded-full border-4 border-background ${
+                  milestone.isNegative ? "bg-red-500" : "bg-accent"
+                }`}
+              ></div>
             </div>
-            <div
-              className={`absolute left-1/2 h-4 w-4 -translate-x-1/2 transform rounded-full border-4 border-background ${
-                milestone.isNegative ? "bg-red-500" : "bg-accent"
-              }`}
-            ></div>
-          </div>
-        ))}
+          ))}
+        </RoughNotationGroup>
       </div>
     </div>
   );
@@ -157,31 +201,58 @@ export const ConversionStats = () => {
   return (
     <div className="my-6 rounded-lg border-2 border-border bg-background p-6">
       <h3 className="mb-6 text-center text-xl font-bold text-foreground">
-        📈 Tunnel de conversion Hormozi
+        📈{" "}
+        <RoughNotation
+          type="highlight"
+          show={true}
+          color="#74b9ff"
+          animationDelay={400}
+        >
+          Tunnel de conversion Hormozi
+        </RoughNotation>
       </h3>
-      {steps.map((step, index) => (
-        <div key={index} className="mb-4">
-          <div className="mb-2 flex items-center justify-between">
-            <span className="font-semibold text-foreground">{step.label}</span>
-            <span className="text-lg font-bold text-foreground">
-              {step.value}
-            </span>
+      <RoughNotationGroup show={true}>
+        {steps.map((step, index) => (
+          <div key={index} className="mb-4">
+            <div className="mb-2 flex items-center justify-between">
+              <span className="font-semibold text-foreground">
+                {step.label}
+              </span>
+              <span className="text-lg font-bold text-foreground">
+                <RoughNotation
+                  type="circle"
+                  show={true}
+                  color={index === steps.length - 1 ? "#00b894" : "#fdcb6e"}
+                  animationDelay={600 + index * 200}
+                >
+                  {step.value}
+                </RoughNotation>
+              </span>
+            </div>
+            <div className="h-4 w-full rounded-full bg-muted/30">
+              <div
+                className={`h-4 rounded-full transition-all duration-1000 ease-out ${step.colorClass}`}
+                style={{ width: `${step.percentage}%` }}
+              ></div>
+            </div>
+            <div className="mt-1 text-right text-sm text-foreground/60">
+              {step.percentage}%
+            </div>
           </div>
-          <div className="h-4 w-full rounded-full bg-muted/30">
-            <div
-              className={`h-4 rounded-full transition-all duration-1000 ease-out ${step.colorClass}`}
-              style={{ width: `${step.percentage}%` }}
-            ></div>
-          </div>
-          <div className="mt-1 text-right text-sm text-foreground/60">
-            {step.percentage}%
-          </div>
-        </div>
-      ))}
+        ))}
+      </RoughNotationGroup>
       <div className="mt-4 rounded-lg border border-border bg-muted/20 p-3">
         <div className="text-center text-sm text-foreground">
-          <strong>Résultat :</strong> 1% de conversion finale = 1 client pour
-          100 contacts
+          <strong>Résultat :</strong>{" "}
+          <RoughNotation
+            type="underline"
+            show={true}
+            color="#e17055"
+            animationDelay={1400}
+          >
+            1% de conversion finale
+          </RoughNotation>{" "}
+          = 1 client pour 100 contacts
         </div>
       </div>
     </div>
@@ -224,36 +295,79 @@ export const CommunicationMatrix = () => {
   return (
     <div className="my-6 rounded-lg border border-border bg-background p-6">
       <h3 className="mb-6 text-center text-xl font-bold text-foreground">
-        🎯 Matrice de Communication
+        🎯{" "}
+        <RoughNotation
+          type="highlight"
+          show={true}
+          color="#a29bfe"
+          animationDelay={300}
+        >
+          Matrice de Communication
+        </RoughNotation>
       </h3>
       <div className="mb-4 grid grid-cols-3 gap-4">
         <div></div>
         <div className="rounded bg-muted/30 p-2 text-center font-bold text-foreground">
-          Audience Chaude
+          <RoughNotation
+            type="bracket"
+            show={true}
+            color="#00cec9"
+            animationDelay={800}
+            brackets={["left", "right"]}
+          >
+            Audience Chaude
+          </RoughNotation>
         </div>
         <div className="rounded bg-muted/30 p-2 text-center font-bold text-foreground">
-          Audience Froide
+          <RoughNotation
+            type="bracket"
+            show={true}
+            color="#fd79a8"
+            animationDelay={1000}
+            brackets={["left", "right"]}
+          >
+            Audience Froide
+          </RoughNotation>
         </div>
       </div>
 
-      {matrix.map((row, rowIndex) => (
-        <div key={rowIndex} className="mb-4 grid grid-cols-3 gap-4">
-          <div className="rounded bg-muted/30 p-2 text-center font-bold text-foreground">
-            {rowIndex === 0 ? "Un à Un" : "Un à Plusieurs"}
-          </div>
-          {row.map((cell, cellIndex) => (
-            <div
-              key={cellIndex}
-              className={`rounded-lg border-2 p-4 text-center ${cell.bgClass} ${cell.borderClass}`}
-            >
-              <div className="font-bold text-foreground">{cell.title}</div>
-              <div className="mt-1 text-sm text-foreground/70">
-                {cell.subtitle}
-              </div>
+      <RoughNotationGroup show={true}>
+        {matrix.map((row, rowIndex) => (
+          <div key={rowIndex} className="mb-4 grid grid-cols-3 gap-4">
+            <div className="rounded bg-muted/30 p-2 text-center font-bold text-foreground">
+              <RoughNotation
+                type="bracket"
+                show={true}
+                color="#fab1a0"
+                animationDelay={1200 + rowIndex * 200}
+                brackets={["top", "bottom"]}
+              >
+                {rowIndex === 0 ? "Un à Un" : "Un à Plusieurs"}
+              </RoughNotation>
             </div>
-          ))}
-        </div>
-      ))}
+            {row.map((cell, cellIndex) => (
+              <div
+                key={cellIndex}
+                className={`rounded-lg border-2 p-4 text-center ${cell.bgClass} ${cell.borderClass}`}
+              >
+                <div className="font-bold text-foreground">
+                  <RoughNotation
+                    type="underline"
+                    show={true}
+                    color="#6c5ce7"
+                    animationDelay={1600 + (rowIndex * 2 + cellIndex) * 200}
+                  >
+                    {cell.title}
+                  </RoughNotation>
+                </div>
+                <div className="mt-1 text-sm text-foreground/70">
+                  {cell.subtitle}
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </RoughNotationGroup>
     </div>
   );
 };
@@ -306,41 +420,69 @@ export const LeadMagnetFunnel = () => {
   return (
     <div className="my-6 rounded-lg border border-border bg-gradient-to-r from-background to-muted/10 p-6">
       <h3 className="mb-6 text-center text-xl font-bold text-foreground">
-        🎭 Funnel des Lead Magnets
+        🎭{" "}
+        <RoughNotation
+          type="highlight"
+          show={true}
+          color="#ff7675"
+          animationDelay={200}
+        >
+          Funnel des Lead Magnets
+        </RoughNotation>
       </h3>
       <div className="flex flex-col items-center justify-between md:flex-row">
-        {stages.map((stage, index) => (
-          <div key={index} className="mb-4 flex flex-col items-center md:mb-0">
+        <RoughNotationGroup show={true}>
+          {stages.map((stage, index) => (
             <div
-              className={`mb-3 flex h-20 w-20 items-center justify-center rounded-full border-4 text-3xl ${stage.circleClass}`}
+              key={index}
+              className="mb-4 flex flex-col items-center md:mb-0"
             >
-              {stage.icon}
+              <div
+                className={`mb-3 flex h-20 w-20 items-center justify-center rounded-full border-4 text-3xl ${stage.circleClass}`}
+              >
+                {stage.icon}
+              </div>
+              <div
+                className={`max-w-xs rounded-lg border-2 p-4 text-center ${stage.bgClass} ${stage.borderClass}`}
+              >
+                <div className="mb-1 font-bold text-foreground">
+                  <RoughNotation
+                    type="circle"
+                    show={true}
+                    color="#55a3ff"
+                    animationDelay={500 + index * 300}
+                  >
+                    {stage.title}
+                  </RoughNotation>
+                </div>
+                <div className="mb-2 text-sm text-foreground/70">
+                  {stage.description}
+                </div>
+                <div className="rounded border border-border bg-background p-2 text-xs text-foreground/80 italic">
+                  {stage.example}
+                </div>
+              </div>
+              {index < stages.length - 1 && (
+                <div className="mx-4 hidden text-4xl text-foreground/40 md:block">
+                  →
+                </div>
+              )}
             </div>
-            <div
-              className={`max-w-xs rounded-lg border-2 p-4 text-center ${stage.bgClass} ${stage.borderClass}`}
-            >
-              <div className="mb-1 font-bold text-foreground">
-                {stage.title}
-              </div>
-              <div className="mb-2 text-sm text-foreground/70">
-                {stage.description}
-              </div>
-              <div className="rounded border border-border bg-background p-2 text-xs text-foreground/80 italic">
-                {stage.example}
-              </div>
-            </div>
-            {index < stages.length - 1 && (
-              <div className="mx-4 hidden text-4xl text-foreground/40 md:block">
-                →
-              </div>
-            )}
-          </div>
-        ))}
+          ))}
+        </RoughNotationGroup>
       </div>
       <div className="mt-6 rounded-lg border border-border bg-muted/20 p-4">
         <div className="text-center text-sm text-foreground">
-          <strong>Conseil d'Hormozi :</strong> Être un "dealer de drogue" -
-          offrir la dose la plus forte possible gratuitement
+          <strong>Conseil d'Hormozi :</strong> Être un{" "}
+          <RoughNotation
+            type="highlight"
+            show={true}
+            color="#ffeaa7"
+            animationDelay={1800}
+          >
+            "dealer de drogue"
+          </RoughNotation>{" "}
+          - offrir la dose la plus forte possible gratuitement
         </div>
       </div>
     </div>
