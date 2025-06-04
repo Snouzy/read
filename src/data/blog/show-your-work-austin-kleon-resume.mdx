@@ -14,6 +14,9 @@ tags:
 description: Mes réflexions sur "Show Your Work!" d'Austin Kleon, un guide pour partager son travail créatif et construire une audience authentique.
 ---
 
+import { CreativeProcessTimeline, AuthenticityMatrix, AudienceBuildingCalculator, StorytellingFramework, SharingImpactComparison } from "../../components/KleonComponents.tsx";
+import { RoughNotation } from "react-rough-notation";
+
 J'ai récemment terminé "Show Your Work!" d'Austin Kleon, et je dois avouer que mes sentiments sont mitigés. Bien que le livre soit globalement **"bien"**, j'ai eu l'impression qu'il était **assez vide** par moments. Malgré cela, il contient quelques pépites qui méritent d'être partagées.
 
 ## Sommaire
@@ -24,21 +27,27 @@ Note personnelle : **5/5** (malgré mes réserves)
 
 Pourquoi cette note élevée malgré mon sentiment de "vide" ? Parce que Kleon réussit à synthétiser des idées importantes sur le partage créatif de manière accessible. Le livre se lit rapidement et contient des conseils pratiques, même s'ils auraient pu être développés davantage.
 
+<CreativeProcessTimeline client:visible />
+
 ## Les concepts clés du livre
 
 ### L'honnêteté comme fondement
 
-**Être honnête et ouvert sur ce qu'on aime est la meilleure façon de connecter avec les gens qui ont la même façon de penser.**
+**<RoughNotation client:visible type="bracket" color="#00b894" show={true} brackets={["left", "right"]}>Être honnête et ouvert sur ce qu'on aime est la meilleure façon de connecter avec les gens qui ont la même façon de penser.</RoughNotation>**
 
 C'est probablement l'enseignement le plus puissant du livre. Kleon insiste sur l'authenticité comme moteur de connexion. Plutôt que d'essayer de plaire à tout le monde, il vaut mieux assumer ses goûts et attirer naturellement les personnes qui partagent nos centres d'intérêt.
 
+<AuthenticityMatrix client:visible />
+
 ### La curiosité comme moteur
 
-La curiosité n'est pas seulement un trait de personnalité, c'est un outil de création. Kleon encourage à cultiver et partager sa curiosité, car c'est ce qui nous rend uniques dans notre approche créative.
+La curiosité n'est pas seulement un trait de personnalité, c'est un <RoughNotation client:visible type="underline" color="#4ecdc4" show={true}>outil de création</RoughNotation>. Kleon encourage à cultiver et partager sa curiosité, car c'est ce qui nous rend uniques dans notre approche créative.
 
 ### Le partage intelligent
 
 Le partage ne signifie pas tout dévoiler. Il s'agit de trouver le bon équilibre entre transparence et mystère, entre processus et résultat final. Montrer son travail, c'est inviter les autres dans son univers créatif sans pour autant perdre sa magie.
+
+<AudienceBuildingCalculator client:visible />
 
 ### L'importance de la perception
 
@@ -46,7 +55,9 @@ Comment nous percevons le monde influence directement notre création. Kleon nou
 
 ### Le storytelling au service de la création
 
-Chaque projet, chaque œuvre a une histoire. Apprendre à raconter cette histoire transforme un simple partage en véritable connexion avec son audience.
+Chaque projet, chaque œuvre a une histoire. Apprendre à raconter cette histoire transforme un simple partage en <RoughNotation client:visible type="highlight" color="#ff6b6b" show={true}>véritable connexion</RoughNotation> avec son audience.
+
+<StorytellingFramework client:visible />
 
 ## Les références inspirantes
 
@@ -60,10 +71,14 @@ L'un des messages sous-jacents du livre est que l'apprentissage ne s'arrête jam
 
 Au-delà du simple partage, Kleon nous encourage à construire une véritable communauté autour de notre travail. C'est peut-être là que le livre trouve sa plus grande valeur : il nous rappelle que créer n'est pas un acte solitaire.
 
+<SharingImpactComparison client:visible />
+
 ## Verdict final
 
 "Show Your Work!" est un livre qui se lit facilement et qui contient des conseils pratiques pour quiconque souhaite partager son travail créatif. Bien qu'il puisse parfois sembler superficiel, il pose les bonnes questions et offre un cadre de réflexion solide.
 
 Si vous cherchez un guide détaillé et approfondi, vous risquez d'être déçu. En revanche, si vous voulez un déclic, une motivation pour commencer à partager votre travail, ce livre remplit parfaitement son rôle.
 
-**Recommandation** : À lire si vous hésitez encore à partager votre travail créatif, mais ne vous attendez pas à une révolution conceptuelle.
+**Recommandation** : À lire si vous hésitez encore à partager votre travail créatif, mais ne vous attendez pas à une <RoughNotation client:visible type="underline" color="#45b7d1" show={true}>révolution conceptuelle</RoughNotation>.
+
+**Message final de Kleon :** Votre travail a de la valeur, vos processus sont uniques, et le monde a besoin de voir ce que vous créez. Alors montrez votre travail !
