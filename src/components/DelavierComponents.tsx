@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import type { ChangeEvent } from "react";
-import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
+import { RoughNotation } from "react-rough-notation";
 
 // 1. Timeline évolutionnaire des comportements humains
 export const EvolutionTimeline = () => {
@@ -42,49 +42,39 @@ export const EvolutionTimeline = () => {
   return (
     <div className="my-6 rounded-lg border border-border bg-gradient-to-r from-background to-muted/10 p-6">
       <h3 className="mb-6 text-center text-xl font-bold text-foreground">
-        🧬{" "}
-        <RoughNotation
-          type="highlight"
-          show={true}
-          color="#ff6b6b"
-          animationDelay={200}
-        >
-          Evolution des comportements humains
-        </RoughNotation>
+        🧬 Evolution des comportements humains
       </h3>
       <div className="relative">
         <div className="absolute left-1/2 h-full w-1 -translate-x-1/2 transform bg-border"></div>
-        <RoughNotationGroup show={true}>
-          {stages.map((stage, index) => (
+        {stages.map((stage, index) => (
+          <div
+            key={index}
+            className={`mb-8 flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
+          >
             <div
-              key={index}
-              className={`mb-8 flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
+              className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}
             >
               <div
-                className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}
+                className={`rounded-lg border-2 p-4 ${stage.bgClass} ${stage.borderClass}`}
               >
-                <div
-                  className={`rounded-lg border-2 p-4 ${stage.bgClass} ${stage.borderClass}`}
-                >
-                  <div className="text-lg font-bold text-foreground">
-                    {stage.period}
-                  </div>
-                  <div className="text-xl font-bold text-accent">
-                    {stage.title}
-                  </div>
-                  <div className="text-sm text-foreground/70">
-                    {stage.behavior}
-                  </div>
+                <div className="text-lg font-bold text-foreground">
+                  {stage.period}
+                </div>
+                <div className="text-xl font-bold text-accent">
+                  {stage.title}
+                </div>
+                <div className="text-sm text-foreground/70">
+                  {stage.behavior}
                 </div>
               </div>
-              <div
-                className={`absolute left-1/2 flex h-12 w-12 -translate-x-1/2 transform items-center justify-center rounded-full border-4 border-background bg-background text-2xl`}
-              >
-                {stage.icon}
-              </div>
             </div>
-          ))}
-        </RoughNotationGroup>
+            <div
+              className={`absolute left-1/2 flex h-12 w-12 -translate-x-1/2 transform items-center justify-center rounded-full border-4 border-background bg-background text-2xl`}
+            >
+              {stage.icon}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -118,59 +108,42 @@ export const GenderStrategyMatrix = () => {
   return (
     <div className="my-6 rounded-lg border border-border bg-background p-6">
       <h3 className="mb-6 text-center text-xl font-bold text-foreground">
-        ⚖️{" "}
-        <RoughNotation
-          type="highlight"
-          show={true}
-          color="#ffeaa7"
-          animationDelay={300}
-        >
-          Stratégies évolutionnaires selon Delavier
-        </RoughNotation>
+        ⚖️ Stratégies évolutionnaires selon Delavier
       </h3>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <RoughNotationGroup show={true}>
-          {Object.entries(strategies).map(([key, strategy], stratIndex) => (
-            <div
-              key={key}
-              className="rounded-lg border-2 border-border bg-muted/20 p-6"
-            >
-              <h4 className="mb-4 text-center text-lg font-bold text-foreground">
-                <RoughNotation
-                  type="underline"
-                  show={true}
-                  color={strategy.color}
-                  animationDelay={600 + stratIndex * 200}
-                >
-                  {strategy.title}
-                </RoughNotation>
-              </h4>
-              {strategy.items.map((item, index) => (
-                <div
-                  key={index}
-                  className="mb-3 rounded border border-border bg-background p-3"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-foreground/70">
-                      {item.label}
-                    </span>
-                    <span className="text-xl">{item.icon}</span>
-                  </div>
-                  <div className="mt-1 font-semibold text-foreground">
-                    <RoughNotation
-                      type="highlight"
-                      show={true}
-                      color={strategy.color + "40"}
-                      animationDelay={800 + stratIndex * 200 + index * 100}
-                    >
-                      {item.value}
-                    </RoughNotation>
-                  </div>
+        {Object.entries(strategies).map(([key, strategy]) => (
+          <div
+            key={key}
+            className="rounded-lg border-2 border-border bg-muted/20 p-6"
+          >
+            <h4 className="mb-4 text-center text-lg font-bold text-foreground">
+              <RoughNotation
+                type="underline"
+                show={true}
+                color={strategy.color}
+                animationDelay={300}
+              >
+                {strategy.title}
+              </RoughNotation>
+            </h4>
+            {strategy.items.map((item, index) => (
+              <div
+                key={index}
+                className="mb-3 rounded border border-border bg-background p-3"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-medium text-foreground/70">
+                    {item.label}
+                  </span>
+                  <span className="text-xl">{item.icon}</span>
                 </div>
-              ))}
-            </div>
-          ))}
-        </RoughNotationGroup>
+                <div className="mt-1 font-semibold text-foreground">
+                  {item.value}
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -339,15 +312,7 @@ export const InstinctSocietyConflict = () => {
   return (
     <div className="my-6 rounded-lg border border-border bg-background p-6">
       <h3 className="mb-6 text-center text-xl font-bold text-foreground">
-        ⚡{" "}
-        <RoughNotation
-          type="highlight"
-          show={true}
-          color="#fd79a8"
-          animationDelay={300}
-        >
-          Conflit Instincts vs Société selon Delavier
-        </RoughNotation>
+        ⚡ Conflit Instincts vs Société selon Delavier
       </h3>
 
       {/* Scenario selector */}
@@ -358,7 +323,7 @@ export const InstinctSocietyConflict = () => {
             onClick={() => setSelectedScenario(index)}
             className={`rounded-lg border-2 p-3 text-center transition-all ${
               selectedScenario === index
-                ? "border-accent bg-accent/20 text-accent"
+                ? "border-accent bg-accent-alpha-20 text-accent"
                 : "border-border bg-muted/10 text-foreground/70 hover:bg-muted/20"
             }`}
           >
@@ -373,14 +338,7 @@ export const InstinctSocietyConflict = () => {
         <div className="mb-4 text-center">
           <div className="text-4xl">{currentScenario.icon}</div>
           <h4 className="text-lg font-bold text-foreground">
-            <RoughNotation
-              type="underline"
-              show={true}
-              color="#74b9ff"
-              animationDelay={400}
-            >
-              {currentScenario.situation}
-            </RoughNotation>
+            {currentScenario.situation}
           </h4>
         </div>
 
@@ -389,14 +347,7 @@ export const InstinctSocietyConflict = () => {
           <div className="rounded-lg border-2 border-red-300 bg-red-50 p-4 dark:border-red-800 dark:bg-red-950/30">
             <div className="mb-2 flex items-center justify-between">
               <h5 className="font-bold text-foreground">
-                <RoughNotation
-                  type="box"
-                  show={true}
-                  color={currentScenario.primitiveInstinct.color}
-                  animationDelay={600}
-                >
-                  {currentScenario.primitiveInstinct.title}
-                </RoughNotation>
+                {currentScenario.primitiveInstinct.title}
               </h5>
               <span className="text-2xl">
                 {currentScenario.primitiveInstinct.icon}
@@ -411,14 +362,7 @@ export const InstinctSocietyConflict = () => {
           <div className="rounded-lg border-2 border-green-300 bg-green-50 p-4 dark:border-green-800 dark:bg-green-950/30">
             <div className="mb-2 flex items-center justify-between">
               <h5 className="font-bold text-foreground">
-                <RoughNotation
-                  type="box"
-                  show={true}
-                  color={currentScenario.modernExpectation.color}
-                  animationDelay={800}
-                >
-                  {currentScenario.modernExpectation.title}
-                </RoughNotation>
+                {currentScenario.modernExpectation.title}
               </h5>
               <span className="text-2xl">
                 {currentScenario.modernExpectation.icon}
@@ -439,7 +383,7 @@ export const InstinctSocietyConflict = () => {
                 type="highlight"
                 show={true}
                 color="#fdcb6e"
-                animationDelay={1000}
+                animationDelay={500}
               >
                 Résultat du conflit
               </RoughNotation>
@@ -490,79 +434,47 @@ export const SocietyComparison = () => {
   return (
     <div className="my-6 rounded-lg border border-border bg-background p-6">
       <h3 className="mb-6 text-center text-xl font-bold text-foreground">
-        🔄{" "}
-        <RoughNotation
-          type="highlight"
-          show={true}
-          color="#a29bfe"
-          animationDelay={300}
-        >
-          Évolution des mécanismes sociaux
-        </RoughNotation>
+        🔄 Évolution des mécanismes sociaux
       </h3>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <RoughNotationGroup show={true}>
-          {Object.entries(comparison).map(([key, society], socIndex) => (
-            <div
-              key={key}
-              className={`rounded-lg border-2 p-6 ${
-                key === "primitive"
-                  ? "border-amber-300 bg-amber-50 dark:border-amber-800 dark:bg-amber-950/30"
-                  : "border-blue-300 bg-blue-50 dark:border-blue-800 dark:bg-blue-950/30"
-              }`}
-            >
-              <div className="mb-4 text-center">
-                <div className="text-4xl">{society.icon}</div>
-                <h4 className="text-lg font-bold text-foreground">
-                  <RoughNotation
-                    type="box"
-                    show={true}
-                    color={key === "primitive" ? "#fdcb6e" : "#74b9ff"}
-                    animationDelay={600 + socIndex * 200}
-                  >
-                    {society.title}
-                  </RoughNotation>
-                </h4>
-              </div>
-              {society.aspects.map((aspect, index) => (
-                <div
-                  key={index}
-                  className="mb-3 rounded border border-border bg-background p-3"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-foreground/70">
-                      {aspect.label}
-                    </span>
-                    <span className="text-lg">{aspect.icon}</span>
-                  </div>
-                  <div className="mt-1 text-sm text-foreground">
-                    <RoughNotation
-                      type="underline"
-                      show={true}
-                      color={key === "primitive" ? "#e17055" : "#00b894"}
-                      animationDelay={800 + socIndex * 200 + index * 100}
-                    >
-                      {aspect.value}
-                    </RoughNotation>
-                  </div>
-                </div>
-              ))}
+        {Object.entries(comparison).map(([key, society]) => (
+          <div
+            key={key}
+            className={`rounded-lg border-2 p-6 ${
+              key === "primitive"
+                ? "border-amber-300 bg-amber-50 dark:border-amber-800 dark:bg-amber-950/30"
+                : "border-blue-300 bg-blue-50 dark:border-blue-800 dark:bg-blue-950/30"
+            }`}
+          >
+            <div className="mb-4 text-center">
+              <div className="text-4xl">{society.icon}</div>
+              <h4 className="text-lg font-bold text-foreground">
+                {society.title}
+              </h4>
             </div>
-          ))}
-        </RoughNotationGroup>
+            {society.aspects.map((aspect, index) => (
+              <div
+                key={index}
+                className="mb-3 rounded border border-border bg-background p-3"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-medium text-foreground/70">
+                    {aspect.label}
+                  </span>
+                  <span className="text-lg">{aspect.icon}</span>
+                </div>
+                <div className="mt-1 text-sm text-foreground">
+                  {aspect.value}
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
       <div className="mt-6 rounded-lg border border-border bg-muted/20 p-4">
         <div className="text-center text-sm text-foreground">
-          <strong>Conclusion de Delavier :</strong>{" "}
-          <RoughNotation
-            type="highlight"
-            show={true}
-            color="#ff6b6b40"
-            animationDelay={1400}
-          >
-            Notre programmation primitive entre en conflit avec les codes
-            modernes
-          </RoughNotation>
+          <strong>Conclusion de Delavier :</strong> Notre programmation
+          primitive entre en conflit avec les codes modernes
         </div>
       </div>
     </div>

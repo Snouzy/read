@@ -8,6 +8,9 @@ html[data-theme="light"] {
   --background: #f2f5ec;
   --foreground: #353538;
   --accent: #1158d1;
+  --accent-alpha-10: #1158d11a;
+  --accent-alpha-20: #1158d133;
+  --accent-alpha-75: #1158d1bf;
   --muted: #bbc789;
   --border: #7cadff;
 }
@@ -16,6 +19,9 @@ html[data-theme="dark"] {
   --background: #2f3741;
   --foreground: #e6e6e6;
   --accent: #ff5722;
+  --accent-alpha-10: #ff57221a;
+  --accent-alpha-20: #ff572233;
+  --accent-alpha-75: #ff5722bf;
   --muted: #596b81;
   --border: #3b4655;
 }
@@ -24,13 +30,16 @@ html[data-theme="dark"] {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
+  --color-accent-alpha-10: var(--accent-alpha-10);
+  --color-accent-alpha-20: var(--accent-alpha-20);
+  --color-accent-alpha-75: var(--accent-alpha-75);
   --color-muted: var(--muted);
   --color-border: var(--border);
 }
 
 @layer base {
   * {
-    @apply border-border outline-accent/75;
+    @apply border-border outline-accent-alpha-75;
     scrollbar-width: auto;
     scrollbar-color: var(--color-muted) transparent;
   }
@@ -38,7 +47,7 @@ html[data-theme="dark"] {
     @apply overflow-y-scroll scroll-smooth;
   }
   body {
-    @apply flex min-h-svh flex-col bg-background font-mono text-foreground selection:bg-accent/75 selection:text-background;
+    @apply flex min-h-svh flex-col bg-background font-mono text-foreground selection:bg-accent-alpha-75 selection:text-background;
   }
   a,
   button {
