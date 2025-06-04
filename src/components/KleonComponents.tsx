@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 // 1. Timeline du processus créatif de partage
 export const CreativeProcessTimeline = () => {
