@@ -259,97 +259,203 @@ export const SurvivalValueCalculator = () => {
   );
 };
 
-// 4. Schéma des mécanismes de jalousie
-export const JealousyMechanism = () => {
-  const [isActive, setIsActive] = useState(false);
+// 4. Conflit Instincts primitifs vs Attentes modernes
+export const InstinctSocietyConflict = () => {
+  const [selectedScenario, setSelectedScenario] = useState(0);
 
-  const steps = [
+  const scenarios = [
     {
-      title: "Détection de menace",
-      description: "Perception d'un rival potentiel",
-      icon: "👁️",
-      color: "#ff6b6b",
+      situation: "Compétition au travail",
+      icon: "💼",
+      primitiveInstinct: {
+        title: "Instinct primitif",
+        reaction: "Dominer physiquement le rival",
+        icon: "⚔️",
+        color: "#ff6b6b",
+      },
+      modernExpectation: {
+        title: "Attente moderne",
+        reaction: "Collaborer professionnellement",
+        icon: "🤝",
+        color: "#00b894",
+      },
+      tension: "Agressivité refoulée → Stress",
     },
     {
-      title: "Activation primitive",
-      description: "Réponse émotionnelle instinctive",
-      icon: "⚡",
-      color: "#fd79a8",
+      situation: "Attraction physique",
+      icon: "💕",
+      primitiveInstinct: {
+        title: "Instinct primitif",
+        reaction: "Approche directe et physique",
+        icon: "🏃‍♂️",
+        color: "#ff6b6b",
+      },
+      modernExpectation: {
+        title: "Attente moderne",
+        reaction: "Séduction subtile et consentie",
+        icon: "💬",
+        color: "#00b894",
+      },
+      tension: "Frustration → Maladresse sociale",
     },
     {
-      title: "Validation de choix",
-      description: "Confirmation de la virilité du partenaire",
-      icon: "✅",
-      color: "#00b894",
+      situation: "Volonté de ressources",
+      icon: "💰",
+      primitiveInstinct: {
+        title: "Instinct primitif",
+        reaction: "Accumuler et protéger",
+        icon: "🛡️",
+        color: "#ff6b6b",
+      },
+      modernExpectation: {
+        title: "Attente moderne",
+        reaction: "Partager et redistributer",
+        icon: "🌍",
+        color: "#00b894",
+      },
+      tension: "Anxiété → Comportements compulsifs",
     },
     {
-      title: "Renforcement de lien",
-      description: "Intensification de l'attachement",
-      icon: "💪",
-      color: "#74b9ff",
+      situation: "Hiérarchie sociale",
+      icon: "👑",
+      primitiveInstinct: {
+        title: "Instinct primitif",
+        reaction: "Établir dominance visible",
+        icon: "💪",
+        color: "#ff6b6b",
+      },
+      modernExpectation: {
+        title: "Attente moderne",
+        reaction: "Égalité et humilité",
+        icon: "⚖️",
+        color: "#00b894",
+      },
+      tension: "Confusion identitaire → Épuisement",
     },
   ];
+
+  const currentScenario = scenarios[selectedScenario];
 
   return (
     <div className="my-6 rounded-lg border border-border bg-background p-6">
       <h3 className="mb-6 text-center text-xl font-bold text-foreground">
-        🔥 Le mécanisme de la jalousie selon Delavier
-      </h3>
-      <div className="mb-6 text-center">
-        <button
-          onClick={() => setIsActive(!isActive)}
-          className="rounded-lg border-2 border-accent bg-accent/10 px-6 py-3 font-bold text-accent transition-all hover:bg-accent/20"
+        ⚡{" "}
+        <RoughNotation
+          type="highlight"
+          show={true}
+          color="#fd79a8"
+          animationDelay={300}
         >
-          {isActive ? "Réinitialiser" : "Déclencher le mécanisme"}
-        </button>
+          Conflit Instincts vs Société selon Delavier
+        </RoughNotation>
+      </h3>
+
+      {/* Scenario selector */}
+      <div className="mb-6 grid grid-cols-2 gap-2 md:grid-cols-4">
+        {scenarios.map((scenario, index) => (
+          <button
+            key={index}
+            onClick={() => setSelectedScenario(index)}
+            className={`rounded-lg border-2 p-3 text-center transition-all ${
+              selectedScenario === index
+                ? "border-accent bg-accent/20 text-accent"
+                : "border-border bg-muted/10 text-foreground/70 hover:bg-muted/20"
+            }`}
+          >
+            <div className="text-2xl">{scenario.icon}</div>
+            <div className="text-xs font-medium">{scenario.situation}</div>
+          </button>
+        ))}
       </div>
 
-      <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0 md:space-x-4">
-        <RoughNotationGroup show={isActive}>
-          {steps.map((step, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <div
-                className={`mb-3 flex h-20 w-20 items-center justify-center rounded-full border-4 text-3xl transition-all duration-500 ${
-                  isActive
-                    ? "scale-110 border-accent bg-accent/20"
-                    : "border-muted bg-muted/20"
-                }`}
-                style={{
-                  transitionDelay: `${index * 200}ms`,
-                }}
-              >
-                {step.icon}
-              </div>
-              <div className="max-w-32 rounded-lg border border-border bg-muted/20 p-3 text-center">
-                <div className="mb-1 text-sm font-bold text-foreground">
-                  <RoughNotation
-                    type="underline"
-                    show={isActive}
-                    color={step.color}
-                    animationDelay={600 + index * 300}
-                  >
-                    {step.title}
-                  </RoughNotation>
-                </div>
-                <div className="text-xs text-foreground/70">
-                  {step.description}
-                </div>
-              </div>
-              {index < steps.length - 1 && (
-                <div className="mx-4 hidden text-4xl text-foreground/40 md:block">
-                  →
-                </div>
-              )}
+      {/* Current scenario display */}
+      <div className="mb-6">
+        <div className="mb-4 text-center">
+          <div className="text-4xl">{currentScenario.icon}</div>
+          <h4 className="text-lg font-bold text-foreground">
+            <RoughNotation
+              type="underline"
+              show={true}
+              color="#74b9ff"
+              animationDelay={400}
+            >
+              {currentScenario.situation}
+            </RoughNotation>
+          </h4>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          {/* Primitive instinct */}
+          <div className="rounded-lg border-2 border-red-300 bg-red-50 p-4 dark:border-red-800 dark:bg-red-950/30">
+            <div className="mb-2 flex items-center justify-between">
+              <h5 className="font-bold text-foreground">
+                <RoughNotation
+                  type="box"
+                  show={true}
+                  color={currentScenario.primitiveInstinct.color}
+                  animationDelay={600}
+                >
+                  {currentScenario.primitiveInstinct.title}
+                </RoughNotation>
+              </h5>
+              <span className="text-2xl">
+                {currentScenario.primitiveInstinct.icon}
+              </span>
             </div>
-          ))}
-        </RoughNotationGroup>
+            <p className="text-sm text-foreground/80">
+              {currentScenario.primitiveInstinct.reaction}
+            </p>
+          </div>
+
+          {/* Modern expectation */}
+          <div className="rounded-lg border-2 border-green-300 bg-green-50 p-4 dark:border-green-800 dark:bg-green-950/30">
+            <div className="mb-2 flex items-center justify-between">
+              <h5 className="font-bold text-foreground">
+                <RoughNotation
+                  type="box"
+                  show={true}
+                  color={currentScenario.modernExpectation.color}
+                  animationDelay={800}
+                >
+                  {currentScenario.modernExpectation.title}
+                </RoughNotation>
+              </h5>
+              <span className="text-2xl">
+                {currentScenario.modernExpectation.icon}
+              </span>
+            </div>
+            <p className="text-sm text-foreground/80">
+              {currentScenario.modernExpectation.reaction}
+            </p>
+          </div>
+        </div>
+
+        {/* Tension result */}
+        <div className="mt-4 rounded-lg border border-border bg-muted/20 p-4">
+          <div className="text-center">
+            <div className="mb-2 text-2xl">⚡</div>
+            <div className="font-bold text-foreground">
+              <RoughNotation
+                type="highlight"
+                show={true}
+                color="#fdcb6e"
+                animationDelay={1000}
+              >
+                Résultat du conflit
+              </RoughNotation>
+            </div>
+            <p className="mt-2 text-sm text-foreground/80">
+              {currentScenario.tension}
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div className="mt-6 rounded-lg border border-border bg-muted/20 p-4">
+      <div className="rounded-lg border border-border bg-muted/20 p-4">
         <div className="text-center text-sm text-foreground">
-          <strong>Théorie de Delavier :</strong> La jalousie n'est pas un
-          défaut, mais un mécanisme de validation de la qualité du partenaire
-          choisi.
+          <strong>Théorie de Delavier :</strong> La souffrance moderne vient du
+          conflit entre nos programmations primitives et les attentes
+          civilisationnelles
         </div>
       </div>
     </div>
