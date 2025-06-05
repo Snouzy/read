@@ -20,15 +20,7 @@ export const ROICalculator = () => {
   return (
     <div className="my-6 rounded-lg border-2 border-border bg-gradient-to-r from-background to-muted/20 p-6">
       <h3 className="mb-4 text-xl font-bold text-foreground">
-        📊{" "}
-        <RoughNotation
-          type="highlight"
-          show={true}
-          color="#ff6b6b"
-          animationDelay={500}
-        >
-          Calculateur ROI Prospection
-        </RoughNotation>
+        📊 Calculateur ROI Prospection
       </h3>
       <div className="mb-4">
         <label className="mb-2 block text-sm font-medium text-foreground/80">
@@ -59,14 +51,7 @@ export const ROICalculator = () => {
             Revenus/an (offre ou LTV à {OFFER}€)
           </div>
           <div className="text-3xl font-bold text-accent">
-            <RoughNotation
-              type="box"
-              show={true}
-              color="#96ceb4"
-              animationDelay={1700}
-            >
-              {yearlyRevenue.toLocaleString()}€
-            </RoughNotation>
+            {yearlyRevenue.toLocaleString()}€
           </div>
         </div>
       </div>
@@ -109,15 +94,7 @@ export const HormoziTimeline = () => {
   return (
     <div className="my-6 rounded-lg border border-border bg-background p-6">
       <h3 className="mb-6 text-center text-xl font-bold text-foreground">
-        🚀{" "}
-        <RoughNotation
-          type="highlight"
-          show={true}
-          color="#ff9ff3"
-          animationDelay={300}
-        >
-          L'ascension d'Alex Hormozi
-        </RoughNotation>
+        🚀 L'ascension d'Alex Hormozi
       </h3>
       <div className="relative">
         <div className="absolute left-1/2 h-full w-1 -translate-x-1/2 transform bg-border"></div>
@@ -147,14 +124,7 @@ export const HormoziTimeline = () => {
                         : "text-accent"
                     }`}
                   >
-                    <RoughNotation
-                      type={milestone.isNegative ? "crossed-off" : "circle"}
-                      show={true}
-                      color={milestone.isNegative ? "#e74c3c" : "#2ecc71"}
-                      animationDelay={500 + index * 300}
-                    >
-                      {milestone.amount}
-                    </RoughNotation>
+                    {milestone.amount}
                   </div>
                   <div className="text-sm text-foreground/70">
                     {milestone.label}
@@ -201,15 +171,7 @@ export const ConversionStats = () => {
   return (
     <div className="my-6 rounded-lg border-2 border-border bg-background p-6">
       <h3 className="mb-6 text-center text-xl font-bold text-foreground">
-        📈{" "}
-        <RoughNotation
-          type="highlight"
-          show={true}
-          color="#74b9ff"
-          animationDelay={400}
-        >
-          Tunnel de conversion Hormozi
-        </RoughNotation>
+        📈 Tunnel de conversion Hormozi
       </h3>
       <RoughNotationGroup show={true}>
         {steps.map((step, index) => (
@@ -219,14 +181,7 @@ export const ConversionStats = () => {
                 {step.label}
               </span>
               <span className="text-lg font-bold text-foreground">
-                <RoughNotation
-                  type="circle"
-                  show={true}
-                  color={index === steps.length - 1 ? "#00b894" : "#fdcb6e"}
-                  animationDelay={600 + index * 200}
-                >
-                  {step.value}
-                </RoughNotation>
+                {step.value}
               </span>
             </div>
             <div className="h-4 w-full rounded-full bg-muted/30">
@@ -295,39 +250,15 @@ export const CommunicationMatrix = () => {
   return (
     <div className="my-6 rounded-lg border border-border bg-background p-6">
       <h3 className="mb-6 text-center text-xl font-bold text-foreground">
-        🎯{" "}
-        <RoughNotation
-          type="highlight"
-          show={true}
-          color="#a29bfe"
-          animationDelay={300}
-        >
-          Matrice de Communication
-        </RoughNotation>
+        🎯 Matrice de Communication
       </h3>
       <div className="mb-4 grid grid-cols-3 gap-4">
         <div></div>
         <div className="rounded bg-muted/30 p-2 text-center font-bold text-foreground">
-          <RoughNotation
-            type="bracket"
-            show={true}
-            color="#00cec9"
-            animationDelay={800}
-            brackets={["left", "right"]}
-          >
-            Audience Chaude
-          </RoughNotation>
+          Audience Chaude
         </div>
         <div className="rounded bg-muted/30 p-2 text-center font-bold text-foreground">
-          <RoughNotation
-            type="bracket"
-            show={true}
-            color="#fd79a8"
-            animationDelay={1000}
-            brackets={["left", "right"]}
-          >
-            Audience Froide
-          </RoughNotation>
+          Audience Froide
         </div>
       </div>
 
@@ -521,15 +452,7 @@ export const ProspectionMetrics = () => {
   return (
     <div className="my-6 rounded-lg border-2 border-border bg-gradient-to-br from-background to-muted/20 p-6">
       <h3 className="mb-6 text-center text-xl font-bold text-foreground">
-        📊{" "}
-        <RoughNotation
-          type="highlight"
-          show={true}
-          color="#a29bfe"
-          animationDelay={300}
-        >
-          Métriques Clés d'Hormozi
-        </RoughNotation>
+        📊 Métriques Clés d'Hormozi
       </h3>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {metrics.map((metric, index) => (
@@ -601,15 +524,7 @@ export const Framework100Days = () => {
   return (
     <div className="my-6 rounded-lg border-2 border-border bg-gradient-to-r from-background to-muted/10 p-6">
       <h3 className="mb-6 text-center text-xl font-bold text-foreground">
-        🚀{" "}
-        <RoughNotation
-          type="highlight"
-          show={true}
-          color="#e84393"
-          animationDelay={300}
-        >
-          Framework 100 Jours d'Hormozi
-        </RoughNotation>
+        🚀 Framework 100 Jours d'Hormozi
       </h3>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {activities.map((activity, index) => (
@@ -620,16 +535,7 @@ export const Framework100Days = () => {
             <div className="mb-3 flex items-center">
               <span className="mr-3 text-3xl">{activity.icon}</span>
               <div>
-                <h4 className="font-bold text-foreground">
-                  <RoughNotation
-                    type="underline"
-                    show={true}
-                    color={activity.color}
-                    animationDelay={500 + index * 200}
-                  >
-                    {activity.type}
-                  </RoughNotation>
-                </h4>
+                <h4 className="font-bold text-foreground">{activity.type}</h4>
                 <p
                   className="text-sm font-semibold"
                   style={{ color: activity.color }}
@@ -702,15 +608,7 @@ export const WhisperTeaserShout = () => {
   return (
     <div className="my-6 rounded-lg border-2 border-border bg-gradient-to-br from-background to-muted/20 p-6">
       <h3 className="mb-6 text-center text-xl font-bold text-foreground">
-        🎬{" "}
-        <RoughNotation
-          type="highlight"
-          show={true}
-          color="#6c5ce7"
-          animationDelay={300}
-        >
-          Framework Chuchoter - Teaser - Crier
-        </RoughNotation>
+        🎬 Framework Chuchoter - Teaser - Crier
       </h3>
       <div className="flex flex-col gap-6 md:flex-row">
         {phases.map((phase, index) => (
@@ -721,14 +619,7 @@ export const WhisperTeaserShout = () => {
             <div className="mb-4 text-center">
               <div className="mb-2 text-4xl">{phase.icon}</div>
               <h4 className="text-lg font-bold text-foreground">
-                <RoughNotation
-                  type="circle"
-                  show={true}
-                  color={phase.color}
-                  animationDelay={500 + index * 300}
-                >
-                  {phase.phase}
-                </RoughNotation>
+                {phase.phase}
               </h4>
               <p className="mt-1 text-sm text-foreground/70">
                 {phase.description}
