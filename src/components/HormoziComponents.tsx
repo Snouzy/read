@@ -488,3 +488,283 @@ export const LeadMagnetFunnel = () => {
     </div>
   );
 };
+
+// 6. Métriques de prospection
+export const ProspectionMetrics = () => {
+  const metrics = [
+    {
+      metric: "Taux de réponse approches chaleureuses",
+      value: "20%",
+      description: "1 contact sur 5 s'engage",
+      color: "#00b894",
+    },
+    {
+      metric: "Conversion finale",
+      value: "1%",
+      description: "1 client pour 100 contacts",
+      color: "#e17055",
+    },
+    {
+      metric: "Prospects engagés prospection froide",
+      value: "3%",
+      description: "Objectif de conversion",
+      color: "#74b9ff",
+    },
+    {
+      metric: "Ratio LTGP/CAC recommandé",
+      value: "3:1",
+      description: "Seuil de rentabilité",
+      color: "#fd79a8",
+    },
+  ];
+
+  return (
+    <div className="my-6 rounded-lg border-2 border-border bg-gradient-to-br from-background to-muted/20 p-6">
+      <h3 className="mb-6 text-center text-xl font-bold text-foreground">
+        📊{" "}
+        <RoughNotation
+          type="highlight"
+          show={true}
+          color="#a29bfe"
+          animationDelay={300}
+        >
+          Métriques Clés d'Hormozi
+        </RoughNotation>
+      </h3>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        {metrics.map((metric, index) => (
+          <div
+            key={index}
+            className="rounded-lg border border-border bg-background p-4 shadow-sm"
+          >
+            <div className="text-center">
+              <div
+                className="text-3xl font-bold"
+                style={{ color: metric.color }}
+              >
+                <RoughNotation
+                  type="circle"
+                  show={true}
+                  color={metric.color}
+                  animationDelay={500 + index * 200}
+                >
+                  {metric.value}
+                </RoughNotation>
+              </div>
+              <div className="mt-2 text-sm font-semibold text-foreground">
+                {metric.metric}
+              </div>
+              <div className="mt-1 text-xs text-foreground/70">
+                {metric.description}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// 7. Framework 100 jours
+export const Framework100Days = () => {
+  const activities = [
+    {
+      type: "Approches chaleureuses",
+      target: "100 démarches/jour",
+      examples: ["E-mail", "SMS", "Message direct", "Appel"],
+      icon: "🔥",
+      color: "#fd79a8",
+    },
+    {
+      type: "Publication de contenu",
+      target: "100 minutes/jour",
+      examples: ["Vidéos", "Articles", "Podcasts", "Infographies"],
+      icon: "🎯",
+      color: "#74b9ff",
+    },
+    {
+      type: "Prospection à froid",
+      target: "100 démarches/jour",
+      examples: ["E-mail froid", "Appels", "Messages", "Flyers"],
+      icon: "❄️",
+      color: "#00b894",
+    },
+    {
+      type: "Annonces payantes",
+      target: "100 minutes/jour",
+      examples: ["Facebook Ads", "Google Ads", "Podcasts", "Mailing"],
+      icon: "💰",
+      color: "#a29bfe",
+    },
+  ];
+
+  return (
+    <div className="my-6 rounded-lg border-2 border-border bg-gradient-to-r from-background to-muted/10 p-6">
+      <h3 className="mb-6 text-center text-xl font-bold text-foreground">
+        🚀{" "}
+        <RoughNotation
+          type="highlight"
+          show={true}
+          color="#e84393"
+          animationDelay={300}
+        >
+          Framework 100 Jours d'Hormozi
+        </RoughNotation>
+      </h3>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        {activities.map((activity, index) => (
+          <div
+            key={index}
+            className="rounded-lg border border-border bg-background p-5 shadow-sm"
+          >
+            <div className="mb-3 flex items-center">
+              <span className="mr-3 text-3xl">{activity.icon}</span>
+              <div>
+                <h4 className="font-bold text-foreground">
+                  <RoughNotation
+                    type="underline"
+                    show={true}
+                    color={activity.color}
+                    animationDelay={500 + index * 200}
+                  >
+                    {activity.type}
+                  </RoughNotation>
+                </h4>
+                <p
+                  className="text-sm font-semibold"
+                  style={{ color: activity.color }}
+                >
+                  {activity.target}
+                </p>
+              </div>
+            </div>
+            <div className="text-sm text-foreground/70">
+              <strong>Exemples :</strong>
+              <ul className="mt-1 list-disc pl-4">
+                {activity.examples.map((example, idx) => (
+                  <li key={idx}>{example}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="mt-6 rounded-lg border border-border bg-muted/20 p-4">
+        <div className="text-center text-sm text-foreground">
+          <strong>Objectif :</strong> 100 jours consécutifs d'exécution pour{" "}
+          <RoughNotation
+            type="highlight"
+            show={true}
+            color="#ffeaa7"
+            animationDelay={1500}
+          >
+            construire un système d'acquisition robuste
+          </RoughNotation>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 8. Framework Chuchoter-Teaser-Crier
+export const WhisperTeaserShout = () => {
+  const phases = [
+    {
+      phase: "Chuchoter",
+      description: "Créer la curiosité",
+      timing: "Semaines avant le lancement",
+      actions: ["Appels accrocheurs", "Mystère sur le produit", "Coulisses"],
+      icon: "🤫",
+      color: "#74b9ff",
+    },
+    {
+      phase: "Teaser",
+      description: "Révéler progressivement",
+      timing: "14 jours à 3 jours avant",
+      actions: [
+        "Révéler le produit",
+        "Éléments de valeur",
+        "Date de lancement",
+      ],
+      icon: "👀",
+      color: "#fd79a8",
+    },
+    {
+      phase: "Crier",
+      description: "Appel à l'action massif",
+      timing: "3 jours avant au lancement",
+      actions: ["Bonus", "Rareté", "Urgence", "Garanties"],
+      icon: "📢",
+      color: "#e17055",
+    },
+  ];
+
+  return (
+    <div className="my-6 rounded-lg border-2 border-border bg-gradient-to-br from-background to-muted/20 p-6">
+      <h3 className="mb-6 text-center text-xl font-bold text-foreground">
+        🎬{" "}
+        <RoughNotation
+          type="highlight"
+          show={true}
+          color="#6c5ce7"
+          animationDelay={300}
+        >
+          Framework Chuchoter - Teaser - Crier
+        </RoughNotation>
+      </h3>
+      <div className="flex flex-col gap-6 md:flex-row">
+        {phases.map((phase, index) => (
+          <div
+            key={index}
+            className="flex-1 rounded-lg border border-border bg-background p-5 shadow-sm"
+          >
+            <div className="mb-4 text-center">
+              <div className="mb-2 text-4xl">{phase.icon}</div>
+              <h4 className="text-lg font-bold text-foreground">
+                <RoughNotation
+                  type="circle"
+                  show={true}
+                  color={phase.color}
+                  animationDelay={500 + index * 300}
+                >
+                  {phase.phase}
+                </RoughNotation>
+              </h4>
+              <p className="mt-1 text-sm text-foreground/70">
+                {phase.description}
+              </p>
+            </div>
+            <div className="mb-3">
+              <strong className="text-sm" style={{ color: phase.color }}>
+                Timing :
+              </strong>
+              <p className="text-sm text-foreground/80">{phase.timing}</p>
+            </div>
+            <div>
+              <strong className="text-sm text-foreground">Actions :</strong>
+              <ul className="mt-1 list-disc pl-4 text-sm text-foreground/70">
+                {phase.actions.map((action, idx) => (
+                  <li key={idx}>{action}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="mt-6 rounded-lg border border-border bg-muted/20 p-4">
+        <div className="text-center text-sm text-foreground">
+          <strong>Inspiration :</strong> Modèle des{" "}
+          <RoughNotation
+            type="highlight"
+            show={true}
+            color="#00b894"
+            animationDelay={1800}
+          >
+            sorties de films
+          </RoughNotation>{" "}
+          - bandes-annonces progressives pour créer l'anticipation
+        </div>
+      </div>
+    </div>
+  );
+};
