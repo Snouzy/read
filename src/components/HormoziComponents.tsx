@@ -442,7 +442,7 @@ export const ProspectionMetrics = () => {
       color: "#74b9ff",
     },
     {
-      metric: "Ratio LTGP/CAC recommandé",
+      metric: "Ratio LTV/CAC recommandé",
       value: "3:1",
       description: "Seuil de rentabilité",
       color: "#fd79a8",
