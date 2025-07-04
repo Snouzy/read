@@ -17,6 +17,7 @@ tags:
 ---
 
 import { RoughNotation } from "react-rough-notation";
+import { HookModel, VariableRewards, EthicsMatrix, HabitCalculator, VariabilityComparison } from "../../components/EyalComponents.tsx";
 
 "Hooked: How to Build Habit-Forming Products" de Nir Eyal présente un modèle systématique pour créer des produits qui génèrent des habitudes chez les utilisateurs. L'auteur, entrepreneur et consultant dans la Silicon Valley, s'appuie sur des recherches en psychologie comportementale et neurosciences pour expliquer les mécanismes d'engagement.
 
@@ -28,6 +29,8 @@ import { RoughNotation } from "react-rough-notation";
 
 Selon Eyal, une habitude s'installe quand ne rien faire provoque un peu de souffrance. Pour devenir une routine, un comportement doit se manifester à une fréquence et à un niveau d'utilité perçue élevés.
 
+<HabitCalculator client:visible />
+
 ### Les 4 étapes du modèle Hook
 
 Le modèle Hook se compose de quatre phases séquentielles :
@@ -36,6 +39,8 @@ Le modèle Hook se compose de quatre phases séquentielles :
 2. **Action** : Le comportement simple effectué en anticipation d'une récompense
 3. **Récompense variable** : La gratification imprévisible qui satisfait le besoin
 4. **Investissement** : L'effort consenti par l'utilisateur qui augmente la probabilité de répétition
+
+<HookModel client:visible />
 
 ## Phase 1 : Le déclencheur
 
@@ -112,6 +117,8 @@ La quête de ressources détermine ce type de récompenses. Historiquement orien
 
 **Exemples :** Jeux vidéo (passage de niveau), Codecademy (progression d'apprentissage), applications de fitness
 
+<VariableRewards client:visible />
+
 ### Préservation de la liberté
 
 La recherche française citée dans le livre révèle l'efficacité de la phrase : "Mais vous êtes libre d'accepter ou de refuser." Cette approche double les montants donnés lors de demandes de dons.
@@ -123,6 +130,8 @@ Préserver le sentiment de liberté de l'usager est indispensable pour l'amener 
 **Variabilité finie :** Expérience qui devient prévisible à l'usage (exemple : FarmVille, séries TV rediffusées)
 
 **Variabilité infinie :** Expérience qui maintient l'imprévisibilité (exemple : réseaux sociaux, actualités)
+
+<VariabilityComparison client:visible />
 
 ## Phase 4 : L'investissement
 
@@ -195,6 +204,8 @@ Eyal classifie les créateurs de technologies selon deux axes :
 - N'utilise pas son propre produit
 - Ne croit pas que son produit améliore la vie des utilisateurs  
 - Motivation purement vénale
+
+<EthicsMatrix client:visible />
 
 ### Recommandation éthique
 
