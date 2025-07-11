@@ -25,6 +25,6 @@ export const SITE = {
 export const CURRENT_READING = {
   enabled: true, // Pour pouvoir désactiver facilement
   title: "Mohamed Boclet - Connaissance Illimitée",
-  currentPage: 70,
+  currentPage: 175,
   totalPages: 272,
 } as const;
