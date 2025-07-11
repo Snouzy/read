@@ -532,3 +532,7 @@ Avant de finaliser un composant, vérifier :
 ---
 
 Utilise ce guide pour créer des composants mémorables qui transforment la lecture passive en expérience interactive enrichissante.
+
+Voici le résumé : 
+
+$ARGUMENTS
