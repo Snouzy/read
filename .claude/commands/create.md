@@ -9,6 +9,9 @@ Ne donne pas ton avis du genre "C’est du génie pur" ou des choses comme ça. 
 
 Résume simplement le livre avec tes connaissances issues strictement du web ou des articles que tu as en mémoire.
 
+Il faut parler pour moi, ce blog est avant tout pour moi.
+Evite les "Ce que vous allez apprendre" mais utilise plutôt : "Ce que j'ai appris", par exemple. Et ce, pour toutes les tournures.
+
 ## Objectif principal
 
 Créer des composants visuels et interactifs qui :
