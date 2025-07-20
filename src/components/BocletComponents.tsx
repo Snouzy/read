@@ -6,16 +6,16 @@ export const KnowledgeVirtues = () => {
   const [sparkles, setSparkles] = useState<{id: number, x: number, y: number}[]>([]);
   
   const virtues = [
-    { title: "Élève le niveau de conscience", icon: "🧠", description: "La connaissance nous permet de voir au-delà des apparences", color: "from-purple-400 to-blue-500" },
-    { title: "Rend plus humble", icon: "🙏", description: "Plus on apprend, plus on réalise l'étendue de notre ignorance", color: "from-green-400 to-teal-500" },
-    { title: "Booste la confiance", icon: "💪", description: "Maîtriser un sujet nous rend légitimes et confiants", color: "from-orange-400 to-red-500" },
-    { title: "Aide à décider", icon: "🎯", description: "Les bonnes décisions naissent de la connaissance", color: "from-blue-400 to-indigo-500" },
-    { title: "Notre dernier rempart", icon: "🛡️", description: "Quand on perd tout, la connaissance reste", color: "from-gray-400 to-slate-500" },
-    { title: "Peut changer une vie", icon: "🚀", description: "Découvrir sa passion peut tout transformer", color: "from-pink-400 to-rose-500" },
-    { title: "Antistress naturel", icon: "😌", description: "Comprendre apaise et relativise", color: "from-emerald-400 to-green-500" },
-    { title: "Source de joie", icon: "✨", description: "Apprendre stimule notre curiosité naturelle", color: "from-yellow-400 to-amber-500" },
-    { title: "Rend heureux", icon: "😊", description: "Progresser chaque jour procure satisfaction", color: "from-cyan-400 to-blue-500" },
-    { title: "Atteindre ses objectifs", icon: "🎖️", description: "La connaissance ouvre toutes les portes", color: "from-violet-400 to-purple-500" }
+    { title: "Élève le niveau de conscience", icon: "🧠", description: "La connaissance nous permet de voir au-delà des apparences", color: "from-accent/20 to-accent/30" },
+    { title: "Rend plus humble", icon: "🙏", description: "Plus on apprend, plus on réalise l'étendue de notre ignorance", color: "from-muted/20 to-muted/30" },
+    { title: "Booste la confiance", icon: "💪", description: "Maîtriser un sujet nous rend légitimes et confiants", color: "from-accent/15 to-accent/25" },
+    { title: "Aide à décider", icon: "🎯", description: "Les bonnes décisions naissent de la connaissance", color: "from-accent/20 to-accent/30" },
+    { title: "Notre dernier rempart", icon: "🛡️", description: "Quand on perd tout, la connaissance reste", color: "from-foreground/10 to-foreground/20" },
+    { title: "Peut changer une vie", icon: "🚀", description: "Découvrir sa passion peut tout transformer", color: "from-accent/15 to-accent/25" },
+    { title: "Antistress naturel", icon: "😌", description: "Comprendre apaise et relativise", color: "from-muted/20 to-muted/30" },
+    { title: "Source de joie", icon: "✨", description: "Apprendre stimule notre curiosité naturelle", color: "from-accent/10 to-accent/20" },
+    { title: "Rend heureux", icon: "😊", description: "Progresser chaque jour procure satisfaction", color: "from-muted/15 to-muted/25" },
+    { title: "Atteindre ses objectifs", icon: "🎖️", description: "La connaissance ouvre toutes les portes", color: "from-accent/20 to-accent/30" }
   ];
 
   const handleVirtueClick = (index: number) => {
@@ -69,11 +69,11 @@ export const KnowledgeVirtues = () => {
                 isActive 
                   ? 'bg-skin-accent text-skin-inverted shadow-lg' 
                   : 'bg-skin-fill hover:bg-skin-card-muted'
-              } ${isDiscovered ? 'ring-2 ring-green-400/50' : ''}`}
+              } ${isDiscovered ? 'ring-2 ring-accent/50' : ''}`}
             >
               {isDiscovered && (
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full flex items-center justify-center">
-                  <span className="text-[8px]">✓</span>
+                <div className="absolute -top-1 -right-1 w-4 h-4 bg-accent rounded-full flex items-center justify-center">
+                  <span className="text-[8px] text-background">✓</span>
                 </div>
               )}
               
@@ -102,7 +102,7 @@ export const KnowledgeVirtues = () => {
         </div>
         
         {discoveredVirtues.size === 10 && (
-          <div className="mt-3 p-2 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg text-center animate-pulse">
+          <div className="mt-3 p-2 bg-accent/10 rounded-lg text-center animate-pulse">
             <span className="text-sm font-medium">🎉 Félicitations ! Vous avez découvert toutes les vertus ! 🎉</span>
           </div>
         )}
@@ -178,7 +178,7 @@ export const LearningCycle = () => {
       {/* Progress bar */}
       <div className="mb-6 bg-skin-fill rounded-full h-2 overflow-hidden">
         <div 
-          className="h-full bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 transition-all duration-1000 ease-out"
+          className="h-full bg-gradient-to-r from-accent/60 via-muted to-accent transition-all duration-1000 ease-out"
           style={{ width: `${getProgressPercentage()}%` }}
         ></div>
       </div>
@@ -194,7 +194,7 @@ export const LearningCycle = () => {
               onClick={() => handleStepClick(index)}
               className={`group flex-1 mx-1 p-3 rounded-lg transition-all duration-300 transform hover:scale-105 ${
                 isActive ? 'ring-2 ring-skin-accent shadow-lg' : 'hover:shadow-md'
-              } ${isCompleted ? 'bg-green-100 dark:bg-green-900/30' : 'bg-skin-fill'}`}
+              } ${isCompleted ? 'bg-accent/10' : 'bg-skin-fill'}`}
             >
               <div className={`relative h-3 ${step.color} rounded-full mb-2 overflow-hidden`}>
                 {isCompleted && (
@@ -216,8 +216,8 @@ export const LearningCycle = () => {
               <div className="text-xs font-medium">Étape {index + 1}</div>
               
               {isCompleted && (
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full flex items-center justify-center">
-                  <span className="text-[8px]">✓</span>
+                <div className="absolute -top-1 -right-1 w-4 h-4 bg-accent rounded-full flex items-center justify-center">
+                  <span className="text-[8px] text-background">✓</span>
                 </div>
               )}
             </button>
@@ -244,7 +244,7 @@ export const LearningCycle = () => {
       </div>
       
       {completedSteps.size === 4 && (
-        <div className="mt-4 p-3 bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-lg text-center animate-pulse">
+        <div className="mt-4 p-3 bg-accent text-background rounded-lg text-center animate-pulse">
           <span className="font-medium">🎉 Cycle complet ! Vous maîtrisez le processus d'apprentissage ! 🎉</span>
         </div>
       )}
@@ -261,7 +261,7 @@ export const DalePyramid = () => {
     { 
       percentage: 90, 
       activity: "Faire et dire", 
-      color: "bg-green-500",
+      color: "bg-accent",
       icon: "🗣️",
       description: "Enseigner aux autres, appliquer immédiatement",
       tips: ["Expliquer à quelqu'un", "Créer un projet", "Faire une présentation"]
@@ -269,7 +269,7 @@ export const DalePyramid = () => {
     { 
       percentage: 70, 
       activity: "Dire", 
-      color: "bg-yellow-500",
+      color: "bg-accent/80",
       icon: "💬",
       description: "Participer à une discussion, poser des questions",
       tips: ["Débattre du sujet", "Participer à un groupe", "Poser des questions"]
@@ -277,7 +277,7 @@ export const DalePyramid = () => {
     { 
       percentage: 50, 
       activity: "Voir et entendre", 
-      color: "bg-orange-500",
+      color: "bg-muted",
       icon: "👁️‍🗨️",
       description: "Assister à une démonstration, regarder une vidéo",
       tips: ["Regarder des tutoriels", "Assister à des conférences", "Observer des experts"]
@@ -285,7 +285,7 @@ export const DalePyramid = () => {
     { 
       percentage: 30, 
       activity: "Voir", 
-      color: "bg-red-400",
+      color: "bg-muted/80",
       icon: "👀",
       description: "Regarder des images, diagrammes, schémas",
       tips: ["Utiliser des infographies", "Créer des mind maps", "Visualiser les concepts"]
@@ -293,7 +293,7 @@ export const DalePyramid = () => {
     { 
       percentage: 20, 
       activity: "Entendre", 
-      color: "bg-red-500",
+      color: "bg-foreground/60",
       icon: "👂",
       description: "Écouter une conférence, un podcast",
       tips: ["Écouter des podcasts", "Assister à des cours magistraux", "Écouter de la musique"]
@@ -301,7 +301,7 @@ export const DalePyramid = () => {
     { 
       percentage: 10, 
       activity: "Lire", 
-      color: "bg-red-600",
+      color: "bg-foreground/40",
       icon: "📖",
       description: "Lecture passive de textes",
       tips: ["Lire activement", "Prendre des notes", "Reformuler avec ses mots"]
@@ -317,10 +317,10 @@ export const DalePyramid = () => {
   }, []);
 
   const getBestPractice = (percentage: number) => {
-    if (percentage >= 70) return "🏆 Excellent choix !";
-    if (percentage >= 50) return "👍 Bonne méthode !";
-    if (percentage >= 30) return "⚠️ Méthode passive";
-    return "❌ Peu efficace seul";
+    if (percentage >= 70) return "🎯 Très efficace";
+    if (percentage >= 50) return "✓ Efficace";
+    if (percentage >= 30) return "⚠ Modérément efficace";
+    return "• Peu efficace seul";
   };
 
   return (
@@ -399,7 +399,7 @@ export const DalePyramid = () => {
                   {/* Progress visualization */}
                   <div className="flex items-center gap-2">
                     <span className="text-xs">Efficacité:</span>
-                    <div className="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                    <div className="flex-1 bg-skin-fill rounded-full h-2">
                       <div 
                         className={`h-2 rounded-full ${level.color} transition-all duration-500`}
                         style={{ width: `${level.percentage}%` }}
@@ -414,7 +414,7 @@ export const DalePyramid = () => {
         })}
       </div>
       
-      <div className="mt-6 p-4 bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-900/30 dark:to-blue-900/30 rounded-lg">
+      <div className="mt-6 p-4 bg-muted/10 rounded-lg">
         <div className="flex items-start gap-2">
           <span className="text-lg">🎯</span>
           <div>
@@ -443,7 +443,7 @@ export const MultipleIntelligences = () => {
       icon: "📝",
       description: "Maîtrise du langage, écriture, lecture",
       tip: "Écrivez des résumés, racontez ce que vous apprenez",
-      color: "from-blue-400 to-indigo-500",
+      color: "from-accent/20 to-accent/30",
       questions: [
         "J'aime jouer avec les mots et créer des jeux de mots",
         "J'apprends mieux en lisant et en écrivant",
@@ -455,7 +455,7 @@ export const MultipleIntelligences = () => {
       icon: "🔢",
       description: "Résolution de problèmes, analyse",
       tip: "Créez des tableaux et des structures logiques",
-      color: "from-green-400 to-emerald-500",
+      color: "from-muted/20 to-muted/30",
       questions: [
         "J'aime résoudre des problèmes logiques et des énigmes",
         "Je préfère les explications avec des chiffres et des données",
@@ -467,7 +467,7 @@ export const MultipleIntelligences = () => {
       icon: "🎨",
       description: "Représentation mentale, visualisation",
       tip: "Utilisez des schémas, cartes mentales, dessins",
-      color: "from-purple-400 to-pink-500",
+      color: "from-accent/15 to-accent/25",
       questions: [
         "Je visualise facilement les concepts dans ma tête",
         "J'aime dessiner et créer des diagrammes",
@@ -479,7 +479,7 @@ export const MultipleIntelligences = () => {
       icon: "🏃",
       description: "Apprentissage par le mouvement",
       tip: "Apprenez en marchant, manipulez des objets",
-      color: "from-orange-400 to-red-500",
+      color: "from-foreground/10 to-foreground/20",
       questions: [
         "J'apprends mieux en bougeant et en touchant",
         "J'ai besoin de faire des pauses pour me lever",
@@ -491,7 +491,7 @@ export const MultipleIntelligences = () => {
       icon: "🎵",
       description: "Sensibilité aux sons et rythmes",
       tip: "Créez des rimes, apprenez en chantant",
-      color: "from-yellow-400 to-orange-500",
+      color: "from-accent/10 to-accent/20",
       questions: [
         "J'aime apprendre avec de la musique de fond",
         "Je retiens mieux avec des rythmes et des mélodies",
@@ -503,7 +503,7 @@ export const MultipleIntelligences = () => {
       icon: "👥",
       description: "Interaction et empathie",
       tip: "Apprenez en groupe, enseignez aux autres",
-      color: "from-teal-400 to-cyan-500",
+      color: "from-muted/15 to-muted/25",
       questions: [
         "J'apprends mieux en discutant avec d'autres",
         "J'aime travailler en équipe",
@@ -515,7 +515,7 @@ export const MultipleIntelligences = () => {
       icon: "🧘",
       description: "Connaissance de soi, introspection",
       tip: "Réfléchissez seul, tenez un journal",
-      color: "from-indigo-400 to-purple-500",
+      color: "from-foreground/15 to-foreground/25",
       questions: [
         "Je préfère étudier seul(e) et en silence",
         "J'aime réfléchir et analyser mes pensées",
@@ -527,7 +527,7 @@ export const MultipleIntelligences = () => {
       icon: "🌿",
       description: "Sensibilité à l'environnement",
       tip: "Étudiez dehors, connectez-vous à la nature",
-      color: "from-green-400 to-teal-500",
+      color: "from-muted/10 to-muted/20",
       questions: [
         "J'aime étudier dans la nature",
         "Je remarque facilement les détails environnementaux",
@@ -539,7 +539,7 @@ export const MultipleIntelligences = () => {
       icon: "🤔",
       description: "Questionnement du sens",
       tip: "Donnez du sens à vos apprentissages",
-      color: "from-gray-400 to-slate-500",
+      color: "from-foreground/20 to-foreground/30",
       questions: [
         "J'ai besoin de comprendre le 'pourquoi' de ce que j'apprends",
         "Je m'interroge souvent sur le sens des choses",
@@ -591,7 +591,7 @@ export const MultipleIntelligences = () => {
         
         <div className="mb-4 bg-skin-fill rounded-full h-2">
           <div 
-            className="h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-300"
+            className="h-2 bg-gradient-to-r from-accent/60 to-accent rounded-full transition-all duration-300"
             style={{ width: `${((currentQuestion + 1) / intelligences.length) * 100}%` }}
           ></div>
         </div>
@@ -668,7 +668,7 @@ export const MultipleIntelligences = () => {
               {profileScore > 0 && (
                 <div className="absolute -top-1 -right-1 flex">
                   {Array.from({ length: profileScore }, (_, i) => (
-                    <span key={i} className="text-yellow-400 text-xs">⭐</span>
+                    <span key={i} className="text-accent text-xs">⭐</span>
                   ))}
                 </div>
               )}
@@ -689,7 +689,7 @@ export const MultipleIntelligences = () => {
       </div>
       
       {personalProfile.length > 0 && (
-        <div className="mb-4 p-4 bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-900/30 dark:to-blue-900/30 rounded-lg">
+        <div className="mb-4 p-4 bg-accent/10 rounded-lg">
           <h4 className="font-bold mb-2 flex items-center gap-2">
             <span>🎯</span>
             Votre profil d'intelligences multiples
@@ -720,7 +720,7 @@ export const MultipleIntelligences = () => {
                   <span className="text-xs">Votre niveau :</span>
                   {Array.from({ length: 5 }, (_, i) => (
                     <span key={i} className={`text-sm ${
-                      i < personalProfile[selectedIntelligence] ? 'text-yellow-400' : 'text-gray-300'
+                      i < personalProfile[selectedIntelligence] ? 'text-accent' : 'text-skin-base/30'
                     }`}>
                       ⭐
                     </span>
@@ -745,8 +745,8 @@ export const BrainWaves = () => {
       name: "Beta",
       frequency: "14-30 Hz",
       state: "Éveil actif, stress",
-      color: "bg-red-500",
-      gradientColor: "from-red-400 to-red-600",
+      color: "bg-accent/80",
+      gradientColor: "from-accent/30 to-accent/40",
       characteristics: "Rapides et irrégulières",
       activities: ["Concentration active", "Résolution de problèmes", "Stress"],
       icon: "⚡",
@@ -756,8 +756,8 @@ export const BrainWaves = () => {
       name: "Alpha",
       frequency: "9-13 Hz",
       state: "Relaxation, méditation légère",
-      color: "bg-green-500",
-      gradientColor: "from-green-400 to-green-600",
+      color: "bg-muted",
+      gradientColor: "from-muted/30 to-muted/40",
       characteristics: "Rythmées et régulières",
       activities: ["Apprentissage optimal", "Créativité", "Relaxation"],
       icon: "🧘",
@@ -767,8 +767,8 @@ export const BrainWaves = () => {
       name: "Theta",
       frequency: "4-7 Hz",
       state: "Méditation profonde, hypnose",
-      color: "bg-blue-500",
-      gradientColor: "from-blue-400 to-blue-600",
+      color: "bg-accent/60",
+      gradientColor: "from-accent/20 to-accent/30",
       characteristics: "Lentes et amples",
       activities: ["Méditation profonde", "Inspiration", "Mémoire"],
       icon: "🌊",
@@ -778,8 +778,8 @@ export const BrainWaves = () => {
       name: "Delta",
       frequency: "0.5-3 Hz",
       state: "Sommeil profond",
-      color: "bg-purple-500",
-      gradientColor: "from-purple-400 to-purple-600",
+      color: "bg-foreground/60",
+      gradientColor: "from-foreground/20 to-foreground/30",
       characteristics: "Très lentes et très amples",
       activities: ["Sommeil réparateur", "Guérison", "Régénération"],
       icon: "😴",
@@ -828,7 +828,7 @@ export const BrainWaves = () => {
         
         {activeWave === 1 && (
           <div className="mt-3 text-center">
-            <div className={`inline-block w-16 h-16 rounded-full border-4 border-green-400 transition-all duration-1000 ${
+            <div className={`inline-block w-16 h-16 rounded-full border-4 border-muted transition-all duration-1000 ${
               breathingCycle % 2 === 0 ? 'scale-75 opacity-50' : 'scale-100 opacity-100'
             }`}>
               <div className="flex items-center justify-center h-full text-sm">
@@ -851,7 +851,7 @@ export const BrainWaves = () => {
           disabled={isVisualizing}
           className={`px-3 py-1 rounded-lg transition-all text-sm ${
             isVisualizing 
-              ? 'bg-gray-300 text-gray-500 cursor-not-allowed' 
+              ? 'bg-skin-fill text-skin-base/60 cursor-not-allowed' 
               : 'bg-skin-accent text-skin-inverted hover:bg-opacity-90'
           }`}
         >
@@ -883,7 +883,7 @@ export const BrainWaves = () => {
                       <div className="font-bold flex items-center gap-2">
                         {wave.name}
                         {isActive && isVisualizing && (
-                          <span className="text-xs bg-green-400 text-white px-1 rounded animate-pulse">ACTIF</span>
+                          <span className="text-xs bg-accent text-background px-1 rounded animate-pulse">ACTIF</span>
                         )}
                       </div>
                       <div className="text-sm opacity-80">{wave.frequency}</div>
@@ -918,7 +918,7 @@ export const BrainWaves = () => {
                       </div>
                       
                       {activeWave === 1 && (
-                        <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                        <div className="p-2 bg-muted/20 rounded-lg">
                           <p className="text-xs">
                             💡 <strong>Astuce :</strong> Pour atteindre l'état Alpha, pratiquez la respiration 
                             profonde et la relaxation progressive.
@@ -927,7 +927,7 @@ export const BrainWaves = () => {
                       )}
                       
                       {activeWave === 0 && (
-                        <div className="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
+                        <div className="p-2 bg-accent/20 rounded-lg">
                           <p className="text-xs">
                             ⚠️ <strong>Attention :</strong> Trop d'ondes Beta peut créer du stress. 
                             Prenez des pauses régulières.
@@ -943,7 +943,7 @@ export const BrainWaves = () => {
         })}
       </div>
       
-      <div className="mt-6 p-4 bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-900/30 dark:to-blue-900/30 rounded-lg">
+      <div className="mt-6 p-4 bg-muted/10 rounded-lg">
         <div className="flex items-start gap-2">
           <span className="text-lg">🎯</span>
           <div>
@@ -1148,12 +1148,12 @@ export const CognitiveBiases = () => {
         
         <div className="mb-4 bg-skin-fill rounded-full h-2">
           <div 
-            className="h-2 bg-gradient-to-r from-red-500 to-green-500 rounded-full transition-all duration-300"
+            className="h-2 bg-gradient-to-r from-accent/60 to-accent rounded-full transition-all duration-300"
             style={{ width: `${((currentChallenge + 1) / biases.length) * 100}%` }}
           ></div>
         </div>
         
-        <div className="p-6 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 rounded-lg">
+        <div className="p-6 bg-accent/10 rounded-lg">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-3xl">{currentBias.icon}</span>
             <h4 className="text-lg font-bold">{currentBias.name}</h4>
@@ -1177,7 +1177,7 @@ export const CognitiveBiases = () => {
               ))}
             </div>
           ) : (
-            <div className={`p-4 rounded-lg ${isCorrect ? 'bg-green-100 dark:bg-green-900/30' : 'bg-red-100 dark:bg-red-900/30'}`}>
+            <div className={`p-4 rounded-lg ${isCorrect ? 'bg-muted/20' : 'bg-accent/20'}`}>
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-lg">{isCorrect ? '✅' : '❌'}</span>
                 <span className="font-bold">{isCorrect ? 'Correct !' : 'Incorrect'}</span>
@@ -1189,7 +1189,7 @@ export const CognitiveBiases = () => {
         </div>
         
         {currentChallenge === biases.length - 1 && hasAnswered && (
-          <div className="mt-4 p-4 bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-lg text-center">
+          <div className="mt-4 p-4 bg-accent text-background rounded-lg text-center">
             <h4 className="font-bold mb-2">Challenge terminé ! 🎉</h4>
             <p>Score final : {score}/{biases.length}</p>
             <p className="text-sm mt-1">
@@ -1209,7 +1209,7 @@ export const CognitiveBiases = () => {
         <h3 className="text-xl font-bold text-skin-accent">Les Biais Cognitifs à Dépasser</h3>
         <div className="flex items-center gap-2">
           {challengeAnswers.length > 0 && (
-            <div className="bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-full text-xs">
+            <div className="bg-accent/20 px-2 py-1 rounded-full text-xs">
               🏆 Dernier score : {score}/{biases.length}
             </div>
           )}
@@ -1229,7 +1229,7 @@ export const CognitiveBiases = () => {
           
           return (
             <div key={index} className={`bg-skin-fill rounded-lg overflow-hidden transition-all duration-300 ${
-              isDiscovered ? 'ring-1 ring-green-400/50' : ''
+              isDiscovered ? 'ring-1 ring-accent/50' : ''
             }`}>
               <button
                 onClick={() => handleBiasClick(index)}
@@ -1243,7 +1243,7 @@ export const CognitiveBiases = () => {
                   </span>
                   <span className="font-medium">{bias.name}</span>
                   {isDiscovered && (
-                    <span className="ml-2 text-xs bg-green-400 text-white px-1 rounded">✓</span>
+                    <span className="ml-2 text-xs bg-accent text-background px-1 rounded">✓</span>
                   )}
                 </div>
                 <span className="text-skin-base opacity-50">
@@ -1255,7 +1255,7 @@ export const CognitiveBiases = () => {
                   <p className="text-sm mb-2">{bias.description}</p>
                   <p className="text-xs italic opacity-80 mb-2">Ex: {bias.example}</p>
                   
-                  <div className="mt-3 p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                  <div className="mt-3 p-2 bg-accent/10 rounded-lg">
                     <p className="text-xs">
                       <strong>💡 Comment le détecter :</strong> Soyez attentif à vos réactions automatiques 
                       et questionnez vos premières impressions.
@@ -1269,14 +1269,14 @@ export const CognitiveBiases = () => {
       </div>
       
       {discoveredBiases.size > 0 && (
-        <div className="mt-4 p-4 bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-900/30 dark:to-blue-900/30 rounded-lg">
+        <div className="mt-4 p-4 bg-muted/10 rounded-lg">
           <div className="flex items-center gap-2 mb-2">
             <span>🧠</span>
             <span className="font-bold">Progression : {discoveredBiases.size}/{biases.length} biais découverts</span>
           </div>
-          <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+          <div className="w-full bg-skin-fill rounded-full h-2">
             <div 
-              className="h-2 bg-gradient-to-r from-green-400 to-blue-500 rounded-full transition-all duration-500"
+              className="h-2 bg-gradient-to-r from-accent/60 to-accent rounded-full transition-all duration-500"
               style={{ width: `${(discoveredBiases.size / biases.length) * 100}%` }}
             ></div>
           </div>
@@ -1298,8 +1298,8 @@ export const EisenhowerMatrix = () => {
       title: "Urgent & Important",
       shortTitle: "Urgence",
       action: "À faire immédiatement",
-      color: "bg-red-500",
-      gradientColor: "from-red-400 to-red-600",
+      color: "bg-accent/80",
+      gradientColor: "from-accent/20 to-accent/30",
       examples: ["Crises", "Deadlines", "Problèmes urgents"],
       advice: "Max 10% de vos tâches",
       icon: "🚨"
@@ -1308,8 +1308,8 @@ export const EisenhowerMatrix = () => {
       title: "Important & Non-Urgent",
       shortTitle: "Planification",
       action: "Planifier",
-      color: "bg-green-500",
-      gradientColor: "from-green-400 to-green-600",
+      color: "bg-muted",
+      gradientColor: "from-muted/20 to-muted/30",
       examples: ["Apprentissage", "Relations", "Prévention"],
       advice: "Votre zone de valeur",
       icon: "📈"
@@ -1318,8 +1318,8 @@ export const EisenhowerMatrix = () => {
       title: "Urgent & Non-Important",
       shortTitle: "Délégation",
       action: "Déléguer",
-      color: "bg-yellow-500",
-      gradientColor: "from-yellow-400 to-yellow-600",
+      color: "bg-accent/60",
+      gradientColor: "from-accent/15 to-accent/25",
       examples: ["Interruptions", "Emails", "Réunions"],
       advice: "Minimiser ou déléguer",
       icon: "👥"
@@ -1328,8 +1328,8 @@ export const EisenhowerMatrix = () => {
       title: "Non-Urgent & Non-Important",
       shortTitle: "Élimination",
       action: "Éliminer",
-      color: "bg-gray-500",
-      gradientColor: "from-gray-400 to-gray-600",
+      color: "bg-foreground/60",
+      gradientColor: "from-foreground/15 to-foreground/25",
       examples: ["Distractions", "Activités futiles"],
       advice: "À éviter",
       icon: "🗑️"
@@ -1429,7 +1429,7 @@ export const EisenhowerMatrix = () => {
                 disabled={!newTask.trim()}
                 className={`flex-1 p-2 rounded text-xs transition-all ${
                   !newTask.trim() 
-                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed' 
+                    ? 'bg-skin-fill text-skin-base/60 cursor-not-allowed' 
                     : 'bg-skin-accent text-skin-inverted hover:bg-opacity-90'
                 }`}
               >
@@ -1453,7 +1453,7 @@ export const EisenhowerMatrix = () => {
             ))}
           </div>
           {stats.percentages[1] < 50 && (
-            <p className="text-xs mt-2 text-orange-600 dark:text-orange-400">
+            <p className="text-xs mt-2 text-accent">
               💡 Conseil : Augmentez les tâches "Importantes & Non-Urgentes" pour plus d'efficacité !
             </p>
           )}
@@ -1497,7 +1497,7 @@ export const EisenhowerMatrix = () => {
                     <span className="flex-1 truncate">{task.text}</span>
                     <button
                       onClick={() => removeTask(task.id)}
-                      className="opacity-0 group-hover:opacity-100 text-red-500 hover:text-red-700 transition-all"
+                      className="opacity-0 group-hover:opacity-100 text-accent hover:text-accent/80 transition-all"
                     >
                       ✕
                     </button>
@@ -1506,7 +1506,7 @@ export const EisenhowerMatrix = () => {
               </div>
               
               {quadrantTasks.length === 0 && (
-                <div className="absolute inset-4 flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg opacity-50">
+                <div className="absolute inset-4 flex items-center justify-center border-2 border-dashed border-skin-base/30 rounded-lg opacity-50">
                   <span className="text-xs text-center">
                     Glissez des tâches ici<br/>ou cliquez pour ajouter
                   </span>
@@ -1565,7 +1565,7 @@ export const VAKogLearning = () => {
       name: "Visuel",
       icon: "👁️",
       description: "J'apprends en voyant",
-      color: "from-blue-400 to-cyan-500",
+      color: "from-accent/20 to-accent/30",
       tips: ["Utilisez des schémas", "Créez des mind maps", "Surlignez en couleur"],
       questions: [
         "Je préfère lire des instructions plutôt que les entendre",
@@ -1578,7 +1578,7 @@ export const VAKogLearning = () => {
       name: "Auditif",
       icon: "👂",
       description: "J'apprends en écoutant",
-      color: "from-green-400 to-emerald-500",
+      color: "from-muted/20 to-muted/30",
       tips: ["Écoutez des podcasts", "Répétez à voix haute", "Enregistrez-vous"],
       questions: [
         "Je préfère qu'on m'explique oralement plutôt que de lire",
@@ -1591,7 +1591,7 @@ export const VAKogLearning = () => {
       name: "Kinesthésique",
       icon: "✋",
       description: "J'apprends en faisant",
-      color: "from-orange-400 to-red-500",
+      color: "from-foreground/15 to-foreground/25",
       tips: ["Manipulez des objets", "Apprenez en marchant", "Prenez des notes à la main"],
       questions: [
         "J'ai besoin de toucher et manipuler pour comprendre",
@@ -1604,7 +1604,7 @@ export const VAKogLearning = () => {
       name: "Olfactif",
       icon: "👃",
       description: "Les odeurs ancrent les souvenirs",
-      color: "from-purple-400 to-pink-500",
+      color: "from-accent/15 to-accent/25",
       tips: ["Associez des parfums", "Étudiez dans différents lieux", "Utilisez des huiles essentielles"],
       questions: [
         "Les odeurs me rappellent facilement des souvenirs",
@@ -1617,7 +1617,7 @@ export const VAKogLearning = () => {
       name: "Gustatif",
       icon: "👅",
       description: "Le goût renforce la mémoire",
-      color: "from-yellow-400 to-orange-500",
+      color: "from-muted/15 to-muted/25",
       tips: ["Mâchez du chewing-gum", "Associez des saveurs", "Buvez la même boisson"],
       questions: [
         "Je mâche ou grignote souvent quand j'étudie",
@@ -1685,7 +1685,7 @@ export const VAKogLearning = () => {
         
         <div className="mb-4 bg-skin-fill rounded-full h-2">
           <div 
-            className="h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-300"
+            className="h-2 bg-gradient-to-r from-accent/60 to-accent rounded-full transition-all duration-300"
             style={{ width: `${((currentQuestion + 1) / (channels.length * 3)) * 100}%` }}
           ></div>
         </div>
@@ -1735,7 +1735,7 @@ export const VAKogLearning = () => {
         <h3 className="text-xl font-bold text-skin-accent">Le Modèle VAKog</h3>
         <div className="flex items-center gap-2">
           {results.length > 0 && (
-            <div className="bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-full text-xs">
+            <div className="bg-accent/20 px-2 py-1 rounded-full text-xs">
               🎯 Profil défini
             </div>
           )}
@@ -1749,7 +1749,7 @@ export const VAKogLearning = () => {
       </div>
       
       {results.length > 0 && (
-        <div className="mb-4 p-4 bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-900/30 dark:to-blue-900/30 rounded-lg">
+        <div className="mb-4 p-4 bg-accent/10 rounded-lg">
           <h4 className="font-bold mb-3 flex items-center gap-2">
             <span>🎯</span>
             Votre profil d'apprentissage VAKog
@@ -1760,7 +1760,7 @@ export const VAKogLearning = () => {
                 <div className="text-lg mb-1">{channel.icon}</div>
                 <div className="text-xs font-bold">{channel.letter}</div>
                 <div className="text-xs">{results[index]}/15</div>
-                <div className={`w-full h-2 ${channel.letter === 'V' ? 'bg-blue-400' : channel.letter === 'A' ? 'bg-green-400' : channel.letter === 'K' ? 'bg-orange-400' : channel.letter === 'O' ? 'bg-purple-400' : 'bg-yellow-400'} rounded-full mt-1 opacity-${Math.round((results[index] / 15) * 100)}`}></div>
+                <div className={`w-full h-2 ${channel.letter === 'V' ? 'bg-accent/80' : channel.letter === 'A' ? 'bg-muted' : channel.letter === 'K' ? 'bg-foreground/60' : channel.letter === 'O' ? 'bg-accent/60' : 'bg-muted/80'} rounded-full mt-1`} style={{ opacity: Math.round((results[index] / 15) * 100) / 100 }}></div>
               </div>
             ))}
           </div>
@@ -1788,10 +1788,10 @@ export const VAKogLearning = () => {
                 isActive 
                   ? 'bg-skin-accent text-skin-inverted shadow-lg' 
                   : 'bg-skin-fill hover:bg-skin-card-muted'
-              } ${isDominant ? 'ring-2 ring-yellow-400/50' : ''}`}
+              } ${isDominant ? 'ring-2 ring-accent/50' : ''}`}
             >
               {isDominant && (
-                <div className="absolute -top-1 -right-1 text-yellow-400 text-sm">⭐</div>
+                <div className="absolute -top-1 -right-1 text-accent text-sm">⭐</div>
               )}
               
               <div className={`text-2xl mb-1 transition-transform duration-300 ${
